@@ -178,7 +178,18 @@ color:white;
 text-align:center;
 padding:30px;
 }
+.footer-info{
+display:flex;
+justify-content:center;
+gap:30px;
+font-size:12px;
+margin:8px 0;
+opacity:0.9;
+}
 
+.footer-info span{
+white-space:nowrap;
+}
 /* MODALS */
 
 .modal{
@@ -296,15 +307,17 @@ font-size:34px;
 
 <footer>
 
+<footer>
+
 <p><strong>NEXORA Energia</strong></p>
 
-<p>Email: info@nexoraenergia.it</p>
+<div class="footer-info">
+<span>Email: info@nexoraenergia.it</span>
+<span>Telefono: +39 123 456 789</span>
+<span>Sede: Via Roma 10, Roma</span>
+</div>
 
-<p>Telefono: +39 123 456 789</p>
-
-<p>Sede: Via Gaio Melisso 57, 00175</p>
-
-<p>© 2026 NEXORA Energia - Tutti i diritti riservati</p>
+<p>© 2026 NEXORA Energia</p>
 
 </footer>
 
