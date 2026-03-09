@@ -190,6 +190,81 @@ opacity:0.9;
 .footer-info span{
 white-space:nowrap;
 }
+
+  /* TEAM POPUP PROFESSIONALE */
+
+.team-popup{
+position:fixed;
+left:0;
+bottom:-100%;
+width:100%;
+height:75%;
+background:white;
+box-shadow:0 -15px 40px rgba(0,0,0,0.25);
+transition:0.6s;
+z-index:3000;
+border-top-left-radius:20px;
+border-top-right-radius:20px;
+}
+
+.team-popup.active{
+bottom:0;
+}
+
+.team-box{
+max-width:1100px;
+margin:auto;
+padding:50px 30px;
+text-align:center;
+}
+
+.close-team{
+position:absolute;
+right:30px;
+top:20px;
+font-size:24px;
+cursor:pointer;
+}
+
+.team-grid{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+}
+
+.team-card{
+background:#f5f8ff;
+padding:30px;
+border-radius:18px;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.team-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.team-card img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+border:4px solid #0a3d62;
+}
+
+.role{
+font-weight:600;
+color:#1e90ff;
+margin-bottom:10px;
+}
+
+.desc{
+font-size:14px;
+color:#555;
+}
 /* MODALS */
 
 .modal{
@@ -295,7 +370,7 @@ font-size:34px;
 </div>
 
   
-<div class="card">
+<div class="card" onclick="openTeam()">
 <div class="icon">👨‍💼</div>
 <h3>Consulenti</h3>
 <p>Chi siamo?</p>
@@ -310,14 +385,62 @@ font-size:34px;
 <p><strong>NEXORA Energia</strong></p>
 
 <div class="footer-info">
-<span>Email: info@nexoraenergia.it</span>
-<span>Telefono: +39 123 456 789</span>
-<span>Sede: Via Roma 10, Roma</span>
+<span>Email: infonexora@nexorasrlroma.it</span>
+<span>Telefono: +39 3272179689</span>
+<span>Sede: Via Gaio Melisso 57, Roma 00175</span>
 </div>
 
 <p>© 2026 NEXORA Energia</p>
 
 </footer>
+
+  <!-- TEAM POPUP -->
+
+<div id="teamPopup" class="team-popup">
+
+<div class="team-box">
+
+<span class="close-team" onclick="closeTeam()">✕</span>
+
+<h2>Il nostro team</h2>
+
+<div class="team-grid">
+
+<div class="team-card">
+
+<img src="consulente1.jpg">
+
+<h3>Marco Rossi</h3>
+
+<p class="role">Responsabile Clienti</p>
+
+<p class="desc">
+Esperto nel settore energia da oltre 10 anni.
+Aiuta i clienti a trovare le migliori tariffe.
+</p>
+
+</div>
+
+<div class="team-card">
+
+<img src="consulente2.jpg">
+
+<h3>Luca Bianchi</h3>
+
+<p class="role">Consulente Energetico</p>
+
+<p class="desc">
+Specializzato nell’analisi delle bollette e
+nell’ottimizzazione dei costi energetici.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <!-- LOGIN MODAL -->
 
@@ -362,6 +485,14 @@ font-size:34px;
 </div>
 
 <script>
+
+  function openTeam(){
+document.getElementById("teamPopup").classList.add("active")
+}
+
+function closeTeam(){
+document.getElementById("teamPopup").classList.remove("active")
+}
 
 function openLogin(){
 document.getElementById("loginModal").style.display="flex";
