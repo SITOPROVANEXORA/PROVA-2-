@@ -265,6 +265,58 @@ margin-bottom:10px;
 font-size:14px;
 color:#555;
 }
+/* FORM LAVORA CON NOI */
+
+.work-form{
+width:420px;
+}
+
+.work-sub{
+font-size:14px;
+color:#777;
+margin-bottom:20px;
+}
+
+.work-form form{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.form-row{
+display:flex;
+gap:10px;
+}
+
+.form-row input{
+flex:1;
+}
+
+.work-form input,
+.work-form textarea{
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+font-family:'Poppins',sans-serif;
+}
+
+.work-form textarea{
+height:90px;
+resize:none;
+}
+
+.upload{
+background:#f1f5ff;
+padding:12px;
+border-radius:8px;
+font-size:13px;
+cursor:pointer;
+}
+
+.upload input{
+margin-top:8px;
+}
+  
 /* MODALS */
 
 .modal{
@@ -456,27 +508,31 @@ Imprenditore nel settore amministrativo e servizi fiscali
 
 <div id="workPopup" class="modal">
 
-<div class="modal-content">
+<div class="modal-content work-form">
 
-<span class="close" onclick="closeWork()">X</span>
+<span class="close" onclick="closeWork()">✕</span>
 
 <h2>Lavora con noi</h2>
 
+<p class="work-sub">Invia la tua candidatura al team Nexora</p>
+
 <form action="https://formsubmit.co/facebookcafnexora1@gmail.com" method="POST" enctype="multipart/form-data">
 
+<div class="form-row">
 <input type="text" name="Nome" placeholder="Nome" required>
-
 <input type="text" name="Cognome" placeholder="Cognome" required>
+</div>
+
+<input type="email" name="Email" placeholder="Email professionale" required>
 
 <input type="text" name="Telefono" placeholder="Numero di telefono" required>
 
-<input type="email" name="Email" placeholder="Email" required>
+<textarea name="Descrizione" placeholder="Parlaci brevemente di te e delle tue esperienze..." required></textarea>
 
-<textarea name="Descrizione" placeholder="Parlaci di te..." style="width:100%;height:80px;margin-top:8px;" required></textarea>
-
-<p style="font-size:13px;margin-top:10px;">Carica il tuo curriculum (PDF)</p>
-
+<label class="upload">
+Carica il tuo CV (PDF)
 <input type="file" name="Curriculum" accept=".pdf" required>
+</label>
 
 <button class="btn" type="submit">Invia candidatura</button>
 
