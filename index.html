@@ -389,7 +389,7 @@ font-size:34px;
 <a href="https://www.lumispa.it/dashboard/analyze" target="_blank" rel="noopener">Controlla Bolletta</a>
 <a href="#" onclick="openLogin()">Accedi</a>
 <a href="#" onclick="openRegister()">Registrati</a>
-<a href="#servizi">Chi siamo</a>
+<a href="#" onclick="openPdf()">Chi siamo</a>
 </nav>
 
 
@@ -594,7 +594,31 @@ Carica il tuo CV (PDF)
 
 </div>
 
+<!-- PDF POPUP -->
+
+<div id="pdfModal" class="modal">
+
+<div class="modal-content" style="width:80%;max-width:900px;height:80%;">
+
+<span class="close" onclick="closePdf()">✕</span>
+
+<iframe src="chi-siamo-nexora.pdf" 
+style="width:100%;height:100%;border:none;">
+</iframe>
+
+</div>
+
+</div>
+  
 <script>
+
+  function openPdf(){
+document.getElementById("pdfModal").style.display="flex"
+}
+
+function closePdf(){
+document.getElementById("pdfModal").style.display="none"
+}
 
   function openWork(){
 document.getElementById("workPopup").style.display="flex"
