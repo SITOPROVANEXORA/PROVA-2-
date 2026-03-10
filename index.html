@@ -615,6 +615,52 @@ transform:scale(1.1);
 box-shadow:0 12px 30px rgba(0,0,0,0.4);
 }
 
+/* CONTATORI */
+
+.stats{
+padding:90px 30px;
+background:white;
+text-align:center;
+}
+
+.stats h2{
+font-size:34px;
+margin-bottom:50px;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+max-width:900px;
+margin:auto;
+}
+
+.stat-box{
+background:#f5f8ff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.stat-box:hover{
+transform:translateY(-8px);
+}
+
+.stat-number{
+font-size:48px;
+font-weight:700;
+color:#1e90ff;
+margin-bottom:10px;
+}
+
+.stat-text{
+font-size:15px;
+color:#555;
+}
+  
+
 </style>
 </head>
 
@@ -785,6 +831,25 @@ Controlla la tua bolletta
 
 </section>  
   
+<section class="stats">
+
+<h2>Nexora in numeri</h2>
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<div class="stat-number" id="clientCounter">2625</div>
+<div class="stat-text">Clienti già serviti</div>
+</div>
+
+<div class="stat-box">
+<div class="stat-number" id="visitorCounter">128</div>
+<div class="stat-text">Persone stanno visitando il sito ora</div>
+</div>
+
+</div>
+
+</section>  
 
 <footer>
 
@@ -810,6 +875,9 @@ loading="lazy">
 </div>
 
 </section>
+
+
+  
 
 <p><strong>NEXORA Energia</strong></p>
 
@@ -971,6 +1039,53 @@ style="width:100%;height:100%;border:none;">
 </div>
   
 <script>
+
+/* VISITATORI LIVE */
+
+let visitors=120+Math.floor(Math.random()*40)
+
+const visitorEl=document.getElementById("visitorCounter")
+
+function updateVisitors(){
+
+let change=Math.floor(Math.random()*5)-2
+
+visitors+=change
+
+if(visitors<80){
+visitors=80
+}
+
+visitorEl.innerText=visitors
+
+}
+
+setInterval(updateVisitors,4000)
+
+/* COUNTER CLIENTI */
+
+let clientTarget=2625
+let clientEl=document.getElementById("clientCounter")
+let current=0
+
+function updateClients(){
+
+if(current<clientTarget){
+
+current+=25
+
+clientEl.innerText=current
+
+setTimeout(updateClients,30)
+
+}
+
+}
+
+updateClients()
+  
+  
+  
 
 window.addEventListener("scroll",function(){
 const header=document.querySelector("header")
