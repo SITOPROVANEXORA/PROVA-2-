@@ -325,19 +325,19 @@ footer{
 
 /* ─── MODAL OVERLAY ─── */
 .modal{
-  display:none;position:fixed;inset:0;
+  display:flex;position:fixed;inset:0;
   background:rgba(9,30,58,0.7);backdrop-filter:blur(8px);
   z-index:5000;justify-content:center;align-items:center;
-  animation:fadeIn 0.2s ease;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 0.25s ease, visibility 0.25s ease;
 }
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal.open{display:flex}
+.modal.open{opacity:1;visibility:visible;pointer-events:auto;}
 
 .modal-box{
   background:#fff;border-radius:28px;width:100%;max-width:440px;
   padding:48px 44px;position:relative;
   box-shadow:0 40px 100px rgba(0,0,0,0.3);
-  animation:slideUp 0.3s ease;
+  animation:slideUp 0.3s ease 0.05s both;
 }
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
@@ -421,12 +421,13 @@ footer{
 
 /* ─── TEAM MODAL ─── */
 .team-modal{
-  display:none;position:fixed;inset:0;
+  display:flex;position:fixed;inset:0;
   background:rgba(9,30,58,0.75);backdrop-filter:blur(8px);
   z-index:5000;justify-content:center;align-items:flex-end;
-  animation:fadeIn 0.2s ease;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 0.25s ease,visibility 0.25s ease;
 }
-.team-modal.open{display:flex}
+.team-modal.open{opacity:1;visibility:visible;pointer-events:auto;}
 .team-modal-box{
   background:#fff;
   border-radius:28px 28px 0 0;
@@ -1195,8 +1196,8 @@ function checkStrength(val) {
 }
 
 // ─── MODAL CONTROLS ───
-function openModal(id) { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
 
 function openLogin() { clearMsgs(); openModal('loginModal'); }
 function closeLogin() { closeModal('loginModal'); }
@@ -1206,8 +1207,8 @@ function openWork() { openModal('workPopup'); }
 function closeWork() { closeModal('workPopup'); }
 function openPdf() { openModal('pdfModal'); }
 function closePdf() { closeModal('pdfModal'); }
-function openTeam() { document.getElementById('teamPopup').classList.add('open'); }
-function closeTeam() { document.getElementById('teamPopup').classList.remove('open'); }
+function openTeam() { document.getElementById('teamPopup').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeTeam() { document.getElementById('teamPopup').classList.remove('open'); document.body.style.overflow=''; }
 function handleTeamBackdrop(e) { if(e.target === document.getElementById('teamPopup')) closeTeam(); }
 
 function clearMsgs() {
