@@ -6,503 +6,265 @@
 <title>NEXORA Energia — Gas & Luce</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-
-:root {
-  --navy: #091e3a;
-  --navy2: #0d2d52;
-  --blue: #1a6fdb;
-  --blue2: #2d8cf0;
-  --accent: #00d4ff;
-  --light: #f0f6ff;
-  --white: #ffffff;
-  --text: #2c3e50;
-  --muted: #6b7a8d;
-  --card-bg: #ffffff;
-  --border: rgba(26,111,219,0.12);
-}
-
+:root{--navy:#091e3a;--navy2:#0d2d52;--blue:#1a6fdb;--blue2:#2d8cf0;--accent:#00d4ff;--light:#f0f6ff;--white:#ffffff;--text:#2c3e50;--muted:#6b7a8d;--border:rgba(26,111,219,0.12);}
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#f7faff;color:var(--text);overflow-x:hidden;}
 
-body{
-  font-family:'DM Sans',sans-serif;
-  background:#f7faff;
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-/* ─── HEADER ─── */
-header{
-  position:fixed;top:0;width:100%;z-index:1000;
-  padding:0 60px;height:76px;
-  display:flex;align-items:center;justify-content:space-between;
-  background:rgba(9,30,58,0.92);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.07);
-  transition:all 0.4s;
-}
-header.scrolled{
-  background:var(--navy);
-  box-shadow:0 4px 30px rgba(0,0,0,0.3);
-}
-
+/* HEADER */
+header{position:fixed;top:0;width:100%;z-index:1000;padding:0 60px;height:76px;display:flex;align-items:center;justify-content:space-between;background:rgba(9,30,58,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);transition:all 0.4s;}
+header.scrolled{background:var(--navy);box-shadow:0 4px 30px rgba(0,0,0,0.3);}
 .logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
 .logo-wrap img{height:46px;width:auto;transition:0.3s;filter:brightness(1.1)}
 .logo-wrap img:hover{transform:scale(1.05);filter:drop-shadow(0 0 10px rgba(0,212,255,0.5))}
-
 nav{display:flex;align-items:center;gap:8px}
-nav a{
-  color:rgba(255,255,255,0.82);
-  text-decoration:none;font-family:'Syne',sans-serif;
-  font-weight:600;font-size:14px;
-  padding:9px 20px;border-radius:50px;
-  transition:all 0.25s;letter-spacing:0.3px;
-}
+nav a{color:rgba(255,255,255,0.82);text-decoration:none;font-family:'Syne',sans-serif;font-weight:600;font-size:14px;padding:9px 20px;border-radius:50px;transition:all 0.25s;letter-spacing:0.3px;}
 nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
+.nav-btn{background:linear-gradient(135deg,var(--blue),var(--accent));color:#fff !important;padding:9px 22px !important;box-shadow:0 4px 14px rgba(26,111,219,0.4);}
 
-.nav-btn{
-  background:linear-gradient(135deg,var(--blue),var(--accent));
-  color:#fff !important;
-  padding:9px 22px !important;
-  box-shadow:0 4px 14px rgba(26,111,219,0.4);
-}
-.nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(26,111,219,0.5);background:rgba(255,255,255,0.1)!important}
-
-/* ─── HERO ─── */
-.hero{
-  min-height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 60%, #0a2545 100%);
-  position:relative;overflow:hidden;padding:120px 60px 80px;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 75% 50%, rgba(0,212,255,0.08) 0%, transparent 70%),
-             radial-gradient(ellipse 40% 40% at 20% 80%, rgba(26,111,219,0.12) 0%, transparent 60%);
-}
-.hero-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:80px;max-width:1200px;width:100%;
-  align-items:center;position:relative;z-index:1;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.3);
-  color:var(--accent);padding:6px 16px;border-radius:50px;
-  font-size:12px;font-weight:500;letter-spacing:1px;margin-bottom:28px;
-  text-transform:uppercase;
-}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#0a2545 100%);position:relative;overflow:hidden;padding:120px 60px 80px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 75% 50%,rgba(0,212,255,0.08) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(26,111,219,0.12) 0%,transparent 60%);}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1200px;width:100%;align-items:center;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.3);color:var(--accent);padding:6px 16px;border-radius:50px;font-size:12px;font-weight:500;letter-spacing:1px;margin-bottom:28px;text-transform:uppercase;}
 .hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-.hero h1{
-  font-family:'Syne',sans-serif;font-size:64px;font-weight:800;
-  color:#fff;line-height:1.05;margin-bottom:20px;
-  letter-spacing:-1px;
-}
-.hero h1 em{
-  font-style:normal;
-  background:linear-gradient(90deg,var(--blue2),var(--accent));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-}
+.hero h1{font-family:'Syne',sans-serif;font-size:64px;font-weight:800;color:#fff;line-height:1.05;margin-bottom:20px;letter-spacing:-1px;}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{color:rgba(255,255,255,0.6);font-size:18px;line-height:1.6;margin-bottom:36px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{
-  padding:15px 34px;border:none;border-radius:50px;
-  font-family:'Syne',sans-serif;font-weight:700;font-size:15px;cursor:pointer;
-  background:linear-gradient(135deg,var(--blue),var(--accent));
-  color:#fff;transition:all 0.3s;
-  box-shadow:0 6px 24px rgba(26,111,219,0.45);letter-spacing:0.3px;
-}
+.btn-primary{padding:15px 34px;border:none;border-radius:50px;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--accent));color:#fff;transition:all 0.3s;box-shadow:0 6px 24px rgba(26,111,219,0.45);}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(26,111,219,0.55)}
-.btn-ghost{
-  padding:15px 34px;border:1.5px solid rgba(255,255,255,0.25);border-radius:50px;
-  font-family:'Syne',sans-serif;font-weight:600;font-size:15px;cursor:pointer;
-  background:transparent;color:#fff;transition:all 0.3s;letter-spacing:0.3px;
-}
+.btn-ghost{padding:15px 34px;border:1.5px solid rgba(255,255,255,0.25);border-radius:50px;font-family:'Syne',sans-serif;font-weight:600;font-size:15px;cursor:pointer;background:transparent;color:#fff;transition:all 0.3s;}
 .btn-ghost:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.06)}
 .hero-img-wrap{position:relative}
-.hero-img-wrap img{
-  width:100%;border-radius:24px;
-  box-shadow:0 30px 80px rgba(0,0,0,0.5);
-  display:block;
-}
-.hero-float{
-  position:absolute;bottom:-20px;left:-24px;
-  background:#fff;border-radius:16px;
-  padding:16px 22px;box-shadow:0 8px 32px rgba(0,0,0,0.15);
-  display:flex;align-items:center;gap:12px;
-}
+.hero-img-wrap img{width:100%;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,0.5);display:block;}
+.hero-float{position:absolute;bottom:-20px;left:-24px;background:#fff;border-radius:16px;padding:16px 22px;box-shadow:0 8px 32px rgba(0,0,0,0.15);display:flex;align-items:center;gap:12px;}
 .hero-float .stat{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--blue)}
 .hero-float .lbl{font-size:12px;color:var(--muted);line-height:1.4}
 
-/* ─── SECTIONS COMMON ─── */
-.section-tag{
-  display:inline-block;background:rgba(26,111,219,0.08);
-  color:var(--blue);font-size:11px;font-weight:600;letter-spacing:2px;
-  text-transform:uppercase;padding:6px 16px;border-radius:50px;
-  margin-bottom:16px;border:1px solid rgba(26,111,219,0.15);
-}
-.section-title{
-  font-family:'Syne',sans-serif;font-size:40px;font-weight:800;
-  color:var(--navy);line-height:1.15;margin-bottom:12px;
-}
+/* SECTION COMMON */
+.section-tag{display:inline-block;background:rgba(26,111,219,0.08);color:var(--blue);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;border:1px solid rgba(26,111,219,0.15);}
+.section-title{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:12px;}
 .section-sub{font-size:17px;color:var(--muted);line-height:1.65}
 
-/* ─── SERVIZI ─── */
+/* SERVIZI */
 .servizi{padding:110px 60px;background:#fff}
 .servizi-inner{max-width:1200px;margin:auto}
 .servizi-header{text-align:center;margin-bottom:64px}
-.services-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
-}
-.service-card{
-  background:var(--light);border-radius:24px;padding:40px 36px;
-  border:1px solid var(--border);
-  transition:all 0.4s;cursor:pointer;
-  opacity:1;transform:translateY(0);
-  position:relative;overflow:hidden;
-  animation:cardIn 0.6s ease both;
-}
-.service-card:nth-child(1){animation-delay:0.1s}
-.service-card:nth-child(2){animation-delay:0.22s}
-.service-card:nth-child(3){animation-delay:0.34s}
-@keyframes cardIn{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
-}
-.service-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--blue),var(--accent));
-  transform:scaleX(0);transform-origin:left;transition:0.4s;
-}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.service-card{background:var(--light);border-radius:24px;padding:40px 36px;border:1px solid var(--border);transition:all 0.4s;cursor:pointer;position:relative;overflow:hidden;animation:cardIn 0.6s ease both;}
+.service-card:nth-child(1){animation-delay:0.1s}.service-card:nth-child(2){animation-delay:0.22s}.service-card:nth-child(3){animation-delay:0.34s}
+@keyframes cardIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--accent));transform:scaleX(0);transform-origin:left;transition:0.4s;}
 .service-card:hover::before{transform:scaleX(1)}
-.service-card.show{opacity:1;transform:translateY(0)} /* kept for compat */
-.service-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 24px 60px rgba(26,111,219,0.12);
-  background:#fff;border-color:rgba(26,111,219,0.2);
-}
-.svc-icon{
-  width:60px;height:60px;border-radius:18px;
-  background:linear-gradient(135deg,rgba(26,111,219,0.1),rgba(0,212,255,0.1));
-  display:flex;align-items:center;justify-content:center;
-  font-size:26px;margin-bottom:24px;
-}
+.service-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(26,111,219,0.12);background:#fff;border-color:rgba(26,111,219,0.2);}
+.svc-icon{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,rgba(26,111,219,0.1),rgba(0,212,255,0.1));display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:24px;}
 .service-card h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .service-card p{font-size:15px;color:var(--muted);line-height:1.6}
-.bolletta-btn{
-  display:inline-flex;align-items:center;gap:8px;margin-top:20px;
-  padding:11px 24px;border-radius:50px;text-decoration:none;
-  font-weight:600;font-size:14px;color:#fff;
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
-  transition:all 0.3s;box-shadow:0 4px 14px rgba(26,111,219,0.3);
-}
+.bolletta-btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:11px 24px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue2));transition:all 0.3s;box-shadow:0 4px 14px rgba(26,111,219,0.3);}
 .bolletta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(26,111,219,0.4)}
 .bolletta-btn::after{content:'→'}
 
-/* ─── NUMERI ─── */
+/* NUMERI */
 .numeri{padding:110px 60px;background:var(--navy)}
 .numeri-inner{max-width:1200px;margin:auto;text-align:center}
-.numeri .section-title{color:#fff}
-.numeri .section-sub{color:rgba(255,255,255,0.5)}
-.numeri-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:60px;
-}
-.numero-box{
-  background:rgba(255,255,255,0.05);border-radius:20px;padding:44px 32px;
-  border:1px solid rgba(255,255,255,0.08);transition:0.3s;
-}
+.numeri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:60px;}
+.numero-box{background:rgba(255,255,255,0.05);border-radius:20px;padding:44px 32px;border:1px solid rgba(255,255,255,0.08);transition:0.3s;}
 .numero-box:hover{background:rgba(255,255,255,0.09);transform:translateY(-6px)}
-.numero-box h3{
-  font-family:'Syne',sans-serif;font-size:56px;font-weight:800;
-  background:linear-gradient(135deg,var(--blue2),var(--accent));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;margin-bottom:10px;
-}
+.numero-box h3{font-family:'Syne',sans-serif;font-size:56px;font-weight:800;background:linear-gradient(135deg,var(--blue2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
 .numero-box p{color:rgba(255,255,255,0.55);font-size:15px}
 
-/* ─── COME FUNZIONA ─── */
+/* COME FUNZIONA */
 .funziona{padding:110px 60px;background:var(--light)}
 .funziona-inner{max-width:1200px;margin:auto}
 .funziona-header{text-align:center;margin-bottom:64px}
 .steps-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.step-card{
-  background:#fff;border-radius:24px;padding:44px 36px;
-  border:1px solid var(--border);transition:0.35s;position:relative;
-}
+.step-card{background:#fff;border-radius:24px;padding:44px 36px;border:1px solid var(--border);transition:0.35s;}
 .step-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(26,111,219,0.12)}
-.step-num{
-  font-family:'Syne',sans-serif;font-size:72px;font-weight:800;
-  color:rgba(26,111,219,0.1);line-height:1;margin-bottom:20px;
-}
+.step-num{font-family:'Syne',sans-serif;font-size:72px;font-weight:800;color:rgba(26,111,219,0.1);line-height:1;margin-bottom:20px;}
 .step-card h4{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .step-card p{font-size:15px;color:var(--muted);line-height:1.6}
 
-/* ─── RECENSIONI ─── */
+/* RECENSIONI */
 .recensioni{padding:110px 60px;background:#fff}
 .recensioni-inner{max-width:1200px;margin:auto;text-align:center}
 .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px}
-.review{
-  background:var(--light);border-radius:24px;padding:36px;
-  border:1px solid var(--border);text-align:left;transition:0.35s;
-}
+.review{background:var(--light);border-radius:24px;padding:36px;border:1px solid var(--border);text-align:left;transition:0.35s;}
 .review:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(26,111,219,0.1)}
 .stars{color:#f59e0b;font-size:16px;margin-bottom:16px;letter-spacing:2px}
 .review-text{font-size:15px;color:var(--text);line-height:1.65;margin-bottom:20px}
 .reviewer{display:flex;align-items:center;gap:12px;border-top:1px solid var(--border);padding-top:18px}
-.reviewer-avatar{
-  width:40px;height:40px;border-radius:50%;
-  background:linear-gradient(135deg,var(--blue),var(--accent));
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;
-}
+.reviewer-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;}
 .reviewer-name{font-weight:600;font-size:14px;color:var(--navy)}
 .reviewer-loc{font-size:12px;color:var(--muted)}
 
-/* ─── STATS ─── */
+/* STATS */
 .stats{padding:110px 60px;background:var(--light)}
 .stats-inner{max-width:1200px;margin:auto;text-align:center}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:60px;max-width:700px;margin-left:auto;margin-right:auto}
-.stat-box{
-  background:#fff;border-radius:24px;padding:48px 36px;
-  border:1px solid var(--border);transition:0.35s;
-}
+.stat-box{background:#fff;border-radius:24px;padding:48px 36px;border:1px solid var(--border);transition:0.35s;}
 .stat-box:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(26,111,219,0.1)}
-.stat-number{
-  font-family:'Syne',sans-serif;font-size:54px;font-weight:800;
-  color:var(--blue);margin-bottom:8px;
-}
+.stat-number{font-family:'Syne',sans-serif;font-size:54px;font-weight:800;color:var(--blue);margin-bottom:8px;}
 .stat-text{font-size:15px;color:var(--muted)}
 
-/* ─── RISPARMIO ─── */
-.risparmio{
-  padding:110px 60px;
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
-  position:relative;overflow:hidden;
-}
-.risparmio::before{
-  content:'';position:absolute;
-  top:-40%;right:-10%;width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(0,212,255,0.07) 0%,transparent 70%);
-}
+/* RISPARMIO */
+.risparmio{padding:110px 60px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);position:relative;overflow:hidden;}
+.risparmio::before{content:'';position:absolute;top:-40%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.07) 0%,transparent 70%);}
 .risparmio-inner{max-width:900px;margin:auto;text-align:center;position:relative}
-.risparmio .section-title{color:#fff}
 .risparmio p{color:rgba(255,255,255,0.6);font-size:17px;line-height:1.7;margin-top:16px}
 .risparmio strong{color:var(--accent)}
-.savings-badge{
-  display:inline-block;margin-top:40px;
-  background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.3);
-  color:var(--accent);padding:14px 36px;border-radius:50px;
-  font-family:'Syne',sans-serif;font-size:22px;font-weight:700;
-}
+.savings-badge{display:inline-block;margin-top:40px;background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.3);color:var(--accent);padding:14px 36px;border-radius:50px;font-family:'Syne',sans-serif;font-size:22px;font-weight:700;}
 
-/* ─── MAPPA ─── */
+/* MAPPA */
 .mappa{padding:110px 60px;background:#fff}
 .mappa-inner{max-width:1200px;margin:auto}
 .mappa-header{text-align:center;margin-bottom:48px}
-.mappa-address{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  color:var(--muted);font-size:15px;margin-top:10px;
-}
+.mappa-address{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:15px;margin-top:10px;}
 .mappa-box{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.1)}
 
-/* ─── FOOTER ─── */
-footer{
-  background:var(--navy);color:rgba(255,255,255,0.6);
-  padding:48px 60px;
-}
-.footer-inner{
-  max-width:1200px;margin:auto;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
-}
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
+.footer-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
 .footer-brand{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff}
 .footer-contacts{display:flex;gap:28px;flex-wrap:wrap;font-size:13px}
 .footer-contacts a{color:rgba(255,255,255,0.6);text-decoration:none;transition:0.2s}
 .footer-contacts a:hover{color:#fff}
 .footer-copy{font-size:12px;opacity:0.5;margin-top:8px}
 
-/* ─── MODAL OVERLAY ─── */
+/* ═══════════════════════════════════════════
+   MODAL FIX DEFINITIVO
+   - display:flex sempre attivo
+   - nascosto con visibility:hidden + opacity:0
+   - .open rende visibile con transizione
+   Questo funziona in TUTTI i browser senza problemi
+═══════════════════════════════════════════ */
 .modal{
-  display:flex;position:fixed;inset:0;
-  background:rgba(9,30,58,0.7);backdrop-filter:blur(8px);
-  z-index:5000;justify-content:center;align-items:center;
-  opacity:0;visibility:hidden;pointer-events:none;
+  display:flex !important;
+  position:fixed;inset:0;
+  background:rgba(9,30,58,0.7);
+  backdrop-filter:blur(8px);
+  z-index:9000;
+  justify-content:center;
+  align-items:center;
+  /* NASCOSTO */
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
   transition:opacity 0.25s ease, visibility 0.25s ease;
 }
-.modal.open{opacity:1;visibility:visible;pointer-events:auto;}
-
+.modal.open{
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .modal-box{
   background:#fff;border-radius:28px;width:100%;max-width:440px;
   padding:48px 44px;position:relative;
   box-shadow:0 40px 100px rgba(0,0,0,0.3);
   animation:slideUp 0.3s ease 0.05s both;
 }
-@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-
-.modal-close{
-  position:absolute;top:20px;right:20px;
-  width:36px;height:36px;border-radius:50%;
-  border:none;background:var(--light);cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--muted);font-size:18px;transition:0.2s;
-}
+.modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;border:none;background:var(--light);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px;transition:0.2s;}
 .modal-close:hover{background:#e8eef8;color:var(--navy)}
-
-.modal-logo{
-  display:flex;align-items:center;gap:10px;margin-bottom:32px;
-}
-.modal-logo-dot{
-  width:10px;height:10px;border-radius:50%;
-  background:linear-gradient(135deg,var(--blue),var(--accent));
-}
+.modal-logo{display:flex;align-items:center;gap:10px;margin-bottom:32px;}
+.modal-logo-dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--accent));}
 .modal-logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:var(--navy)}
 .modal-title{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--navy);margin-bottom:6px}
 .modal-sub{font-size:14px;color:var(--muted);margin-bottom:32px}
-
-/* form inputs */
 .form-group{margin-bottom:18px}
-.form-label{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:6px;display:block;letter-spacing:0.2px}
-.form-input{
-  width:100%;padding:13px 16px;border-radius:12px;
-  border:1.5px solid #dde5f0;font-family:'DM Sans',sans-serif;font-size:15px;
-  color:var(--navy);background:#fafcff;transition:all 0.25s;
-  outline:none;
-}
+.form-label{font-size:13px;font-weight:500;color:var(--navy);margin-bottom:6px;display:block;}
+.form-input{width:100%;padding:13px 16px;border-radius:12px;border:1.5px solid #dde5f0;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--navy);background:#fafcff;transition:all 0.25s;outline:none;}
 .form-input:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(26,111,219,0.1)}
 .form-input::placeholder{color:#b0bcc8}
 .input-icon-wrap{position:relative}
 .input-icon-wrap .form-input{padding-left:42px}
 .input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:16px;opacity:0.4}
-
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-
-.submit-btn{
-  width:100%;padding:15px;border:none;border-radius:14px;
-  font-family:'Syne',sans-serif;font-weight:700;font-size:16px;cursor:pointer;
-  background:linear-gradient(135deg,var(--blue),var(--blue2));
-  color:#fff;transition:all 0.3s;margin-top:8px;
-  box-shadow:0 6px 20px rgba(26,111,219,0.35);letter-spacing:0.3px;
-}
+.submit-btn{width:100%;padding:15px;border:none;border-radius:14px;font-family:'Syne',sans-serif;font-weight:700;font-size:16px;cursor:pointer;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;transition:all 0.3s;margin-top:8px;box-shadow:0 6px 20px rgba(26,111,219,0.35);}
 .submit-btn:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(26,111,219,0.45)}
 .submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
-
 .modal-switch{text-align:center;margin-top:20px;font-size:14px;color:var(--muted)}
 .modal-switch a{color:var(--blue);font-weight:600;text-decoration:none;cursor:pointer}
 .modal-switch a:hover{text-decoration:underline}
-
-.form-divider{
-  display:flex;align-items:center;gap:12px;margin:20px 0;
-}
-.form-divider hr{flex:1;border:none;border-top:1px solid #dde5f0}
-.form-divider span{font-size:12px;color:#aab;white-space:nowrap}
-
-/* Status messages */
-.status-msg{
-  padding:12px 16px;border-radius:10px;font-size:14px;
-  font-weight:500;text-align:center;margin-top:14px;display:none;
-}
+.status-msg{padding:12px 16px;border-radius:10px;font-size:14px;font-weight:500;text-align:center;margin-top:14px;display:none;}
 .status-msg.success{background:#ecfdf5;color:#059669;border:1px solid #a7f3d0;display:block}
 .status-msg.error{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;display:block}
 .status-msg.info{background:#eff6ff;color:var(--blue);border:1px solid #bfdbfe;display:block}
-
-/* loading spinner in button */
-.btn-spinner{
-  width:18px;height:18px;border-radius:50%;
-  border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;
-  animation:spin 0.7s linear infinite;display:none;margin:0 auto;
-}
+.btn-spinner{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;animation:spin 0.7s linear infinite;display:none;margin:0 auto;}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* password strength */
 .strength-bar{height:3px;border-radius:2px;background:#e5e7eb;margin-top:6px;overflow:hidden}
 .strength-fill{height:100%;border-radius:2px;transition:all 0.3s;width:0}
+.forgot-link{text-align:right;margin-top:-10px;margin-bottom:4px;font-size:12px}
+.forgot-link a{color:var(--blue);text-decoration:none;font-weight:500}
+.checkbox-row{display:flex;align-items:flex-start;gap:10px;margin-top:6px}
+.checkbox-row input[type=checkbox]{margin-top:2px;accent-color:var(--blue)}
+.checkbox-row label{font-size:13px;color:var(--muted);line-height:1.5}
+.checkbox-row a{color:var(--blue)}
 
-/* ─── TEAM MODAL ─── */
+/* WORK MODAL */
+.work-modal .modal-box{max-width:540px;max-height:90vh;overflow-y:auto;}
+.form-textarea{width:100%;padding:13px 16px;border-radius:12px;border:1.5px solid #dde5f0;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--navy);background:#fafcff;transition:all 0.25s;outline:none;height:100px;resize:none;}
+.form-textarea:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(26,111,219,0.1)}
+.upload-area{border:1.5px dashed #c5d5e8;border-radius:12px;padding:18px;text-align:center;cursor:pointer;transition:0.25s;background:#fafcff;}
+.upload-area:hover{border-color:var(--blue);background:#eff6ff}
+.upload-area p{font-size:13px;color:var(--muted);margin-top:4px}
+.upload-area input{display:none}
+
+/* PDF MODAL */
+.pdf-modal .modal-box{max-width:900px;height:82vh;display:flex;flex-direction:column}
+.pdf-modal iframe{flex:1;border:none;border-radius:12px}
+
+/* ═══════════════════════════════════════════
+   TEAM MODAL — stesso fix definitivo
+═══════════════════════════════════════════ */
 .team-modal{
-  display:flex;position:fixed;inset:0;
-  background:rgba(9,30,58,0.75);backdrop-filter:blur(8px);
-  z-index:5000;justify-content:center;align-items:flex-end;
-  opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity 0.25s ease,visibility 0.25s ease;
+  display:flex !important;
+  position:fixed;inset:0;
+  background:rgba(9,30,58,0.75);
+  backdrop-filter:blur(8px);
+  z-index:9000;
+  justify-content:center;
+  align-items:flex-end;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity 0.25s ease, visibility 0.25s ease;
 }
-.team-modal.open{opacity:1;visibility:visible;pointer-events:auto;}
-.team-modal-box{
-  background:#fff;
-  border-radius:28px 28px 0 0;
-  width:100%;max-height:88vh;overflow-y:auto;
-  box-shadow:0 -20px 60px rgba(0,0,0,0.25);
-  animation:slideUp 0.4s cubic-bezier(0.34,1.2,0.64,1) both;
+.team-modal.open{
+  opacity:1 !important;
+  visibility:visible !important;
+  pointer-events:auto !important;
 }
-@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.team-modal-box{background:#fff;border-radius:28px 28px 0 0;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 -20px 60px rgba(0,0,0,0.25);animation:slideUpPanel 0.4s cubic-bezier(0.34,1.2,0.64,1) both;}
+@keyframes slideUpPanel{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .team-box{max-width:1000px;margin:auto;padding:48px 36px 64px;position:relative}
-.team-handle{
-  width:40px;height:4px;background:#e5e7eb;border-radius:2px;
-  margin:0 auto 32px;
-}
-.close-team{
-  position:absolute;right:24px;top:24px;
-  width:36px;height:36px;border-radius:50%;border:none;
-  background:var(--light);cursor:pointer;font-size:18px;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--muted);transition:0.2s;
-}
+.team-handle{width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:0 auto 32px;}
+.close-team{position:absolute;right:24px;top:24px;width:36px;height:36px;border-radius:50%;border:none;background:var(--light);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:0.2s;}
 .close-team:hover{background:#e8eef8}
-/* ─── ORG CHART ─── */
+
+/* ORG CHART */
 .org-wrap{margin-top:44px}
-.org-connector-v{
-  width:2px;height:32px;
-  background:linear-gradient(to bottom,rgba(26,111,219,0.6),rgba(26,111,219,0.15));
-  margin:0 auto;
-}
-.org-branch-bar{
-  position:relative;height:2px;
-  background:rgba(26,111,219,0.2);
-  margin:0 auto;width:72%;
-}
-.org-branch-bar::before,.org-branch-bar::after{
-  content:'';position:absolute;top:0;
-  width:2px;height:24px;background:rgba(26,111,219,0.2);
-}
-.org-branch-bar::before{left:0}
-.org-branch-bar::after{right:0}
-.org-branch-center{
-  position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:2px;height:24px;background:rgba(26,111,219,0.2);
-}
-.org-children-3{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:18px;margin-top:0;
-}
-@media(max-width:720px){
-  .org-children-3{grid-template-columns:1fr}
-  .org-branch-bar,.org-branch-center{display:none}
-}
-.org-card{
-  background:var(--light);border:1px solid var(--border);
-  border-radius:22px;padding:30px 22px;
-  text-align:center;position:relative;transition:all 0.35s;
-}
+.org-connector-v{width:2px;height:32px;background:linear-gradient(to bottom,rgba(26,111,219,0.6),rgba(26,111,219,0.15));margin:0 auto;}
+.org-branch-bar{position:relative;height:2px;background:rgba(26,111,219,0.2);margin:0 auto;width:72%;}
+.org-branch-bar::before,.org-branch-bar::after{content:'';position:absolute;top:0;width:2px;height:24px;background:rgba(26,111,219,0.2);}
+.org-branch-bar::before{left:0}.org-branch-bar::after{right:0}
+.org-branch-center{position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;height:24px;background:rgba(26,111,219,0.2);}
+.org-children-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:0;}
+@media(max-width:720px){.org-children-3{grid-template-columns:1fr}.org-branch-bar,.org-branch-center{display:none}}
+.org-card{background:var(--light);border:1px solid var(--border);border-radius:22px;padding:30px 22px;text-align:center;position:relative;transition:all 0.35s;}
 .org-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(26,111,219,0.13);border-color:rgba(26,111,219,0.25)}
 .org-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:22px 22px 0 0}
 .org-card.ceo::after{background:linear-gradient(90deg,#b8860b,#f0c040)}
 .org-card.coo::after{background:linear-gradient(90deg,var(--navy),var(--blue2))}
 .org-card.ops::after{background:linear-gradient(90deg,#0d7377,#14a085)}
 .org-card.tech::after{background:linear-gradient(90deg,#4338ca,#818cf8)}
-.org-avatar{
-  width:68px;height:68px;border-radius:50%;margin:0 auto 14px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:#fff;
-}
+.org-avatar{width:68px;height:68px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:#fff;}
 .org-card.ceo .org-avatar{background:linear-gradient(135deg,#b8860b,#daa520);box-shadow:0 6px 20px rgba(184,134,11,0.3)}
 .org-card.coo .org-avatar{background:linear-gradient(135deg,var(--navy),var(--blue2));box-shadow:0 6px 20px rgba(26,111,219,0.25)}
 .org-card.ops .org-avatar{background:linear-gradient(135deg,#0d7377,#14a085);box-shadow:0 6px 20px rgba(13,115,119,0.25)}
 .org-card.tech .org-avatar{background:linear-gradient(135deg,#4338ca,#6366f1);box-shadow:0 6px 20px rgba(67,56,202,0.25)}
-.org-badge{
-  display:inline-block;padding:4px 14px;border-radius:50px;
-  font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;
-}
+.org-badge{display:inline-block;padding:4px 14px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
 .org-card.ceo .org-badge{background:rgba(184,134,11,0.1);border:1px solid rgba(184,134,11,0.3);color:#92650a}
 .org-card.coo .org-badge{background:rgba(9,30,58,0.08);border:1px solid rgba(9,30,58,0.18);color:var(--navy)}
 .org-card.ops .org-badge{background:rgba(13,115,119,0.08);border:1px solid rgba(13,115,119,0.2);color:#0d7377}
@@ -511,40 +273,18 @@ footer{
 .org-desc{font-size:13px;color:var(--muted);line-height:1.55}
 .org-top-wrap{max-width:340px;margin:0 auto}
 
-/* ─── WORK MODAL ─── */
-.work-modal .modal-box{max-width:540px}
-.form-textarea{
-  width:100%;padding:13px 16px;border-radius:12px;
-  border:1.5px solid #dde5f0;font-family:'DM Sans',sans-serif;font-size:15px;
-  color:var(--navy);background:#fafcff;transition:all 0.25s;
-  outline:none;height:100px;resize:none;
-}
-.form-textarea:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(26,111,219,0.1)}
-.upload-area{
-  border:1.5px dashed #c5d5e8;border-radius:12px;padding:18px;
-  text-align:center;cursor:pointer;transition:0.25s;background:#fafcff;
-}
-.upload-area:hover{border-color:var(--blue);background:#eff6ff}
-.upload-area p{font-size:13px;color:var(--muted);margin-top:4px}
-.upload-area input{display:none}
-
-/* ─── PDF MODAL ─── */
-.pdf-modal .modal-box{max-width:900px;height:82vh;display:flex;flex-direction:column}
-.pdf-modal iframe{flex:1;border:none;border-radius:12px}
-
-/* ─── WHATSAPP ─── */
-.whatsapp{
-  position:fixed;bottom:28px;right:28px;
-  width:58px;height:58px;border-radius:50%;
-  background:#25D366;color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  text-decoration:none;font-size:26px;
-  box-shadow:0 8px 24px rgba(37,211,102,0.45);
-  z-index:3000;transition:0.3s;
-}
+/* WHATSAPP */
+.whatsapp{position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:26px;box-shadow:0 8px 24px rgba(37,211,102,0.45);z-index:3000;transition:0.3s;}
 .whatsapp:hover{transform:scale(1.1);box-shadow:0 12px 32px rgba(37,211,102,0.55)}
 
-/* ─── RESPONSIVE ─── */
+/* DASHBOARD NAV */
+.user-nav{display:none;align-items:center;gap:14px}
+.user-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;}
+.user-email-label{font-size:13px;color:rgba(255,255,255,0.7)}
+.logout-btn{padding:7px 18px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.25);background:transparent;color:rgba(255,255,255,0.8);font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:0.2s;}
+.logout-btn:hover{border-color:rgba(255,255,255,0.6);color:#fff}
+
+/* RESPONSIVE */
 @media(max-width:900px){
   header{padding:0 24px}
   .hero{padding:100px 24px 60px}
@@ -556,52 +296,17 @@ footer{
   .footer-inner{flex-direction:column;text-align:center}
   .modal-box{padding:36px 28px}
 }
-
-/* ─── DASHBOARD STATE ─── */
-.user-nav{display:none;align-items:center;gap:14px}
-.user-avatar{
-  width:36px;height:36px;border-radius:50%;
-  background:linear-gradient(135deg,var(--blue),var(--accent));
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;
-}
-.user-email-label{font-size:13px;color:rgba(255,255,255,0.7)}
-.logout-btn{
-  padding:7px 18px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.25);
-  background:transparent;color:rgba(255,255,255,0.8);font-size:13px;font-weight:600;
-  cursor:pointer;font-family:'DM Sans',sans-serif;transition:0.2s;
-}
-.logout-btn:hover{border-color:rgba(255,255,255,0.6);color:#fff}
-
-/* forgot password */
-.forgot-link{text-align:right;margin-top:-10px;margin-bottom:4px;font-size:12px}
-.forgot-link a{color:var(--blue);text-decoration:none;font-weight:500}
-.forgot-link a:hover{text-decoration:underline}
-
-/* checkbox */
-.checkbox-row{display:flex;align-items:flex-start;gap:10px;margin-top:6px}
-.checkbox-row input[type=checkbox]{margin-top:2px;accent-color:var(--blue)}
-.checkbox-row label{font-size:13px;color:var(--muted);line-height:1.5}
-.checkbox-row a{color:var(--blue)}
-
 </style>
 </head>
 <body id="top">
 
-<!-- ═══════════════ HEADER ═══════════════ -->
 <header>
-  <a href="#top" class="logo-wrap">
-    <img src="logo.png" alt="Nexora Energia">
-  </a>
-
-  <!-- Guest nav -->
+  <a href="#top" class="logo-wrap"><img src="logo.png" alt="Nexora Energia"></a>
   <nav id="guestNav">
-    <a href="#" onclick="openLogin(); return false">Accedi</a>
-    <a href="#" class="nav-btn" onclick="openRegister(); return false">Registrati</a>
-    <a href="#" onclick="openPdf(); return false">Chi siamo</a>
+    <a href="#" onclick="openLogin();return false">Accedi</a>
+    <a href="#" class="nav-btn" onclick="openRegister();return false">Registrati</a>
+    <a href="#" onclick="openPdf();return false">Chi siamo</a>
   </nav>
-
-  <!-- Logged-in nav -->
   <div class="user-nav" id="userNav">
     <span class="user-email-label" id="userEmailLabel"></span>
     <div class="user-avatar" id="userAvatar">U</div>
@@ -609,7 +314,6 @@ footer{
   </div>
 </header>
 
-<!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
   <div class="hero-grid">
     <div class="hero-text">
@@ -631,7 +335,6 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════════ SERVIZI ═══════════════ -->
 <section id="servizi" class="servizi">
   <div class="servizi-inner">
     <div class="servizi-header">
@@ -660,29 +363,18 @@ footer{
   </div>
 </section>
 
-<!-- ═══════════════ NUMERI ═══════════════ -->
 <section class="numeri">
   <div class="numeri-inner">
     <div class="section-tag" style="background:rgba(0,212,255,0.1);color:var(--accent);border-color:rgba(0,212,255,0.2)">Perché Nexora</div>
-    <h2 class="section-title" style="color:#fff">Numeri che parlano chiaro</h2>
+    <h2 class="section-title" style="color:#fff;margin-bottom:0">Numeri che parlano chiaro</h2>
     <div class="numeri-grid">
-      <div class="numero-box">
-        <h3 class="counter" data-target="30">0</h3>
-        <p>Anni di esperienza nel settore energia</p>
-      </div>
-      <div class="numero-box">
-        <h3 class="counter" data-target="35">0</h3>
-        <p>% risparmio medio sulle bollette</p>
-      </div>
-      <div class="numero-box">
-        <h3>100%</h3>
-        <p>Consulenza gratuita e trasparente</p>
-      </div>
+      <div class="numero-box"><h3 class="counter" data-target="30">0</h3><p>Anni di esperienza nel settore energia</p></div>
+      <div class="numero-box"><h3 class="counter" data-target="35">0</h3><p>% risparmio medio sulle bollette</p></div>
+      <div class="numero-box"><h3>100%</h3><p>Consulenza gratuita e trasparente</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ COME FUNZIONA ═══════════════ -->
 <section class="funziona">
   <div class="funziona-inner">
     <div class="funziona-header">
@@ -691,89 +383,46 @@ footer{
       <p class="section-sub">Un processo semplice e guidato per ridurre le tue spese energetiche</p>
     </div>
     <div class="steps-wrap">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <h4>Carica la bolletta</h4>
-        <p>Analizza la tua bolletta luce e gas attraverso il nostro strumento gratuito online.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <h4>Analisi dei consumi</h4>
-        <p>I nostri consulenti esaminano nel dettaglio i tuoi consumi e le offerte disponibili.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <h4>Soluzione su misura</h4>
-        <p>Ricevi la proposta più conveniente per le tue esigenze, senza impegno.</p>
-      </div>
+      <div class="step-card"><div class="step-num">01</div><h4>Carica la bolletta</h4><p>Analizza la tua bolletta luce e gas attraverso il nostro strumento gratuito online.</p></div>
+      <div class="step-card"><div class="step-num">02</div><h4>Analisi dei consumi</h4><p>I nostri consulenti esaminano nel dettaglio i tuoi consumi e le offerte disponibili.</p></div>
+      <div class="step-card"><div class="step-num">03</div><h4>Soluzione su misura</h4><p>Ricevi la proposta più conveniente per le tue esigenze, senza impegno.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ RECENSIONI ═══════════════ -->
 <section class="recensioni">
   <div class="recensioni-inner">
     <div class="section-tag">Testimonianze</div>
     <h2 class="section-title">Cosa dicono i clienti</h2>
     <div class="review-grid">
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Servizio velocissimo e professionale. Ho ridotto la bolletta di oltre 200€ l'anno senza fare nulla.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">M</div>
-          <div><div class="reviewer-name">Marco</div><div class="reviewer-loc">Roma</div></div>
-        </div>
-      </div>
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Consulenti molto preparati e sempre disponibili. Finalmente qualcuno di cui fidarsi nel settore energia.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">L</div>
-          <div><div class="reviewer-name">Laura</div><div class="reviewer-loc">Frascati</div></div>
-        </div>
-      </div>
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">Finalmente qualcuno che spiega le bollette in modo semplice. Consiglio Nexora a tutti!</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">G</div>
-          <div><div class="reviewer-name">Giovanni</div><div class="reviewer-loc">Latina</div></div>
-        </div>
-      </div>
+      <div class="review"><div class="stars">★★★★★</div><p class="review-text">Servizio velocissimo e professionale. Ho ridotto la bolletta di oltre 200€ l'anno senza fare nulla.</p><div class="reviewer"><div class="reviewer-avatar">M</div><div><div class="reviewer-name">Marco</div><div class="reviewer-loc">Roma</div></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p class="review-text">Consulenti molto preparati e sempre disponibili. Finalmente qualcuno di cui fidarsi nel settore energia.</p><div class="reviewer"><div class="reviewer-avatar">L</div><div><div class="reviewer-name">Laura</div><div class="reviewer-loc">Frascati</div></div></div></div>
+      <div class="review"><div class="stars">★★★★★</div><p class="review-text">Finalmente qualcuno che spiega le bollette in modo semplice. Consiglio Nexora a tutti!</p><div class="reviewer"><div class="reviewer-avatar">G</div><div><div class="reviewer-name">Giovanni</div><div class="reviewer-loc">Latina</div></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ STATS ═══════════════ -->
 <section class="stats">
   <div class="stats-inner">
     <div class="section-tag">Nexora in numeri</div>
     <h2 class="section-title">La nostra crescita</h2>
     <div class="stats-grid">
-      <div class="stat-box">
-        <div class="stat-number" id="clientCounter">0</div>
-        <div class="stat-text">Clienti già serviti</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number" id="visitorCounter2">128</div>
-        <div class="stat-text">Persone online ora</div>
-      </div>
+      <div class="stat-box"><div class="stat-number" id="clientCounter">0</div><div class="stat-text">Clienti già serviti</div></div>
+      <div class="stat-box"><div class="stat-number" id="visitorCounter2">128</div><div class="stat-text">Persone online ora</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ RISPARMIO ═══════════════ -->
 <section class="risparmio">
   <div class="risparmio-inner">
     <div class="section-tag" style="background:rgba(0,212,255,0.1);color:var(--accent);border-color:rgba(0,212,255,0.2)">Il tuo vantaggio</div>
-    <h2 class="section-title">Quanto puoi risparmiare</h2>
+    <h2 class="section-title" style="color:#fff">Quanto puoi risparmiare</h2>
     <p>Grazie all'analisi personalizzata delle bollette luce e gas, il team di consulenti Nexora individua le soluzioni più vantaggiose per ogni cliente.</p>
     <p>In base ai consumi medi delle famiglie italiane e alle ottimizzazioni disponibili sul mercato, molti clienti ottengono un <strong>risparmio annuale tra €220 e €360</strong> sulle forniture energetiche.</p>
     <div class="savings-badge">💡 Risparmio medio: €280/anno</div>
   </div>
 </section>
 
-<!-- ═══════════════ MAPPA ═══════════════ -->
 <section class="mappa">
   <div class="mappa-inner">
     <div class="mappa-header">
@@ -782,13 +431,11 @@ footer{
       <div class="mappa-address">📍 Via Gaio Melisso 57, Roma 00175</div>
     </div>
     <div class="mappa-box">
-      <iframe src="https://www.google.com/maps?q=Via%20Gaio%20Melisso%2057%20Roma&output=embed"
-        width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps?q=Via%20Gaio%20Melisso%2057%20Roma&output=embed" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -796,25 +443,22 @@ footer{
       <div class="footer-copy">© 2026 NEXORA Energia. Tutti i diritti riservati.</div>
     </div>
     <div class="footer-contacts">
-      <a href="/cdn-cgi/l/email-protection#365f58505958534e5944577658534e59445745445a44595b57185f42">✉ <span class="__cf_email__" data-cfemail="6a03040c05040f1205180b2a040f1205180b1918061805070b44031e">[email&#160;protected]</span></a>
+      <a href="mailto:infonexora@nexorasrlroma.it">✉ infonexora@nexorasrlroma.it</a>
       <a href="tel:+393272179689">📞 +39 327 217 9689</a>
       <span>📍 Via Gaio Melisso 57, Roma</span>
     </div>
   </div>
 </footer>
 
-<!-- ═══════════════ TEAM POPUP ═══════════════ -->
-<div id="teamPopup" class="team-modal" onclick="handleTeamBackdrop(event)">
+<!-- TEAM MODAL -->
+<div id="teamPopup" class="team-modal">
   <div class="team-modal-box">
     <div class="team-box">
       <div class="team-handle"></div>
       <button class="close-team" onclick="closeTeam()">&#x2715;</button>
       <div class="section-tag">Struttura organizzativa</div>
       <h2 class="section-title">Il team Nexora</h2>
-
       <div class="org-wrap">
-
-        <!-- CEO -->
         <div class="org-top-wrap">
           <div class="org-card ceo">
             <div class="org-avatar">GC</div>
@@ -823,11 +467,8 @@ footer{
             <p class="org-desc">Fondatore e guida strategica di Nexora. Imprenditore con oltre 30 anni di esperienza nel settore energetico e finanziario italiano. Supervisiona la visione aziendale, le partnership istituzionali e lo sviluppo del business.</p>
           </div>
         </div>
-
         <div class="org-connector-v"></div>
         <div class="org-branch-bar"><div class="org-branch-center"></div></div>
-
-        <!-- Livello 2 -->
         <div class="org-children-3">
           <div class="org-card coo">
             <div class="org-avatar">LF</div>
@@ -839,122 +480,62 @@ footer{
             <div class="org-avatar">SC</div>
             <div class="org-badge">Head of Administration</div>
             <div class="org-name">Samantha Carlaccini</div>
-            <p class="org-desc">Responsabile dell'amministrazione e del back office aziendale. Gestisce la documentazione contrattuale, le pratiche clienti, la compliance interna e il coordinamento dei flussi operativi quotidiani.</p>
+            <p class="org-desc">Responsabile dell'amministrazione e del back office aziendale. Gestisce documentazione contrattuale, pratiche clienti, compliance interna e coordinamento dei flussi operativi quotidiani.</p>
           </div>
           <div class="org-card tech">
             <div class="org-avatar">AM</div>
             <div class="org-badge">Digital &amp; Software Manager</div>
             <div class="org-name">Alessio Mariutac</div>
-            <p class="org-desc">Responsabile della gestione tecnologica e della presenza digitale di Nexora. Supervisiona lo sviluppo software, i sistemi informativi aziendali, la piattaforma web e le strategie di comunicazione online.</p>
+            <p class="org-desc">Responsabile della gestione tecnologica e della presenza digitale di Nexora. Supervisiona sviluppo software, sistemi informativi aziendali, piattaforma web e strategie di comunicazione online.</p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════ LOGIN MODAL ═══════════════ -->
+<!-- LOGIN -->
 <div id="loginModal" class="modal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeLogin()">✕</button>
-    <div class="modal-logo">
-      <div class="modal-logo-dot"></div>
-      <span class="modal-logo-text">NEXORA Energia</span>
-    </div>
+    <div class="modal-logo"><div class="modal-logo-dot"></div><span class="modal-logo-text">NEXORA Energia</span></div>
     <h2 class="modal-title">Bentornato</h2>
     <p class="modal-sub">Accedi al tuo account Nexora</p>
-
-    <div class="form-group">
-      <label class="form-label">Email</label>
-      <div class="input-icon-wrap">
-        <span class="input-icon">✉</span>
-        <input class="form-input" id="loginEmail" type="email" placeholder="la-tua@email.it" autocomplete="email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Password</label>
-      <div class="input-icon-wrap">
-        <span class="input-icon">🔒</span>
-        <input class="form-input" id="loginPass" type="password" placeholder="••••••••" autocomplete="current-password">
-      </div>
-    </div>
+    <div class="form-group"><label class="form-label">Email</label><div class="input-icon-wrap"><span class="input-icon">✉</span><input class="form-input" id="loginEmail" type="email" placeholder="la-tua@email.it" autocomplete="email"></div></div>
+    <div class="form-group"><label class="form-label">Password</label><div class="input-icon-wrap"><span class="input-icon">🔒</span><input class="form-input" id="loginPass" type="password" placeholder="••••••••" autocomplete="current-password"></div></div>
     <div class="forgot-link"><a onclick="showForgot()">Password dimenticata?</a></div>
-
-    <button class="submit-btn" onclick="login()" id="loginBtn">
-      <span id="loginBtnText">Accedi</span>
-      <div class="btn-spinner" id="loginSpinner"></div>
-    </button>
+    <button class="submit-btn" onclick="login()" id="loginBtn"><span id="loginBtnText">Accedi</span><div class="btn-spinner" id="loginSpinner"></div></button>
     <div class="status-msg" id="loginMsg"></div>
     <div class="modal-switch">Non hai un account? <a onclick="switchToRegister()">Registrati gratis</a></div>
   </div>
 </div>
 
-<!-- ═══════════════ REGISTER MODAL ═══════════════ -->
+<!-- REGISTER -->
 <div id="registerModal" class="modal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeRegister()">✕</button>
-    <div class="modal-logo">
-      <div class="modal-logo-dot"></div>
-      <span class="modal-logo-text">NEXORA Energia</span>
-    </div>
+    <div class="modal-logo"><div class="modal-logo-dot"></div><span class="modal-logo-text">NEXORA Energia</span></div>
     <h2 class="modal-title">Crea il tuo account</h2>
     <p class="modal-sub">Inizia a risparmiare sull'energia oggi stesso</p>
-
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Nome</label>
-        <input class="form-input" id="regNome" placeholder="Mario" autocomplete="given-name">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Cognome</label>
-        <input class="form-input" id="regCognome" placeholder="Rossi" autocomplete="family-name">
-      </div>
+      <div class="form-group"><label class="form-label">Nome</label><input class="form-input" id="regNome" placeholder="Mario" autocomplete="given-name"></div>
+      <div class="form-group"><label class="form-label">Cognome</label><input class="form-input" id="regCognome" placeholder="Rossi" autocomplete="family-name"></div>
     </div>
-    <div class="form-group">
-      <label class="form-label">Email</label>
-      <div class="input-icon-wrap">
-        <span class="input-icon">✉</span>
-        <input class="form-input" id="regEmail" type="email" placeholder="la-tua@email.it" autocomplete="email">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Password</label>
-      <div class="input-icon-wrap">
-        <span class="input-icon">🔒</span>
-        <input class="form-input" id="regPass" type="password" placeholder="Minimo 8 caratteri" autocomplete="new-password" oninput="checkStrength(this.value)">
-      </div>
-      <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Conferma password</label>
-      <div class="input-icon-wrap">
-        <span class="input-icon">🔒</span>
-        <input class="form-input" id="regPass2" type="password" placeholder="Ripeti la password" autocomplete="new-password">
-      </div>
-    </div>
-    <div class="checkbox-row">
-      <input type="checkbox" id="privacyCheck">
-      <label for="privacyCheck">Accetto i <a href="#">Termini di servizio</a> e la <a href="#">Privacy Policy</a> di Nexora</label>
-    </div>
-
-    <button class="submit-btn" onclick="register()" id="regBtn" style="margin-top:18px">
-      <span id="regBtnText">Crea account</span>
-      <div class="btn-spinner" id="regSpinner"></div>
-    </button>
+    <div class="form-group"><label class="form-label">Email</label><div class="input-icon-wrap"><span class="input-icon">✉</span><input class="form-input" id="regEmail" type="email" placeholder="la-tua@email.it" autocomplete="email"></div></div>
+    <div class="form-group"><label class="form-label">Password</label><div class="input-icon-wrap"><span class="input-icon">🔒</span><input class="form-input" id="regPass" type="password" placeholder="Minimo 8 caratteri" autocomplete="new-password" oninput="checkStrength(this.value)"></div><div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div></div>
+    <div class="form-group"><label class="form-label">Conferma password</label><div class="input-icon-wrap"><span class="input-icon">🔒</span><input class="form-input" id="regPass2" type="password" placeholder="Ripeti la password" autocomplete="new-password"></div></div>
+    <div class="checkbox-row"><input type="checkbox" id="privacyCheck"><label for="privacyCheck">Accetto i <a href="#">Termini di servizio</a> e la <a href="#">Privacy Policy</a> di Nexora</label></div>
+    <button class="submit-btn" onclick="register()" id="regBtn" style="margin-top:18px"><span id="regBtnText">Crea account</span><div class="btn-spinner" id="regSpinner"></div></button>
     <div class="status-msg" id="regMsg"></div>
     <div class="modal-switch">Hai già un account? <a onclick="switchToLogin()">Accedi</a></div>
   </div>
 </div>
 
-<!-- ═══════════════ LAVORA CON NOI MODAL ═══════════════ -->
+<!-- LAVORA CON NOI -->
 <div id="workPopup" class="modal work-modal">
-  <div class="modal-box" style="max-width:520px">
+  <div class="modal-box" style="max-width:520px;max-height:90vh;overflow-y:auto;">
     <button class="modal-close" onclick="closeWork()">✕</button>
-    <div class="modal-logo">
-      <div class="modal-logo-dot"></div>
-      <span class="modal-logo-text">NEXORA Energia</span>
-    </div>
+    <div class="modal-logo"><div class="modal-logo-dot"></div><span class="modal-logo-text">NEXORA Energia</span></div>
     <h2 class="modal-title">Lavora con noi</h2>
     <p class="modal-sub">Invia la tua candidatura — ti risponderemo entro 48 ore</p>
     <form action="https://formsubmit.co/facebookcafnexora1@gmail.com" method="POST" enctype="multipart/form-data">
@@ -964,10 +545,7 @@ footer{
       </div>
       <div class="form-group"><label class="form-label">Email</label><input class="form-input" name="Email" type="email" placeholder="la-tua@email.it" required></div>
       <div class="form-group"><label class="form-label">Telefono</label><input class="form-input" name="Telefono" type="tel" placeholder="+39 333 000 0000" required></div>
-      <div class="form-group">
-        <label class="form-label">Presentati brevemente</label>
-        <textarea class="form-textarea" name="Descrizione" placeholder="Racconta la tua esperienza nel settore energia o vendite..." required></textarea>
-      </div>
+      <div class="form-group"><label class="form-label">Presentati brevemente</label><textarea class="form-textarea" name="Descrizione" placeholder="Racconta la tua esperienza nel settore energia o vendite..." required></textarea></div>
       <div class="form-group">
         <label class="form-label">Curriculum vitae (PDF)</label>
         <label class="upload-area">
@@ -985,7 +563,7 @@ footer{
   </div>
 </div>
 
-<!-- ═══════════════ PDF MODAL ═══════════════ -->
+<!-- PDF -->
 <div id="pdfModal" class="modal pdf-modal">
   <div class="modal-box">
     <button class="modal-close" onclick="closePdf()">✕</button>
@@ -994,293 +572,145 @@ footer{
   </div>
 </div>
 
-<!-- WhatsApp -->
 <a class="whatsapp" href="https://wa.me/393272179689" target="_blank" title="Contattaci su WhatsApp">💬</a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ─── USERS STORAGE (localStorage con hashing semplice) ───
-const USERS_KEY = 'nexora_users';
+<script>
+// STORAGE
+const USERS_KEY='nexora_users';
+function getUsers(){try{return JSON.parse(localStorage.getItem(USERS_KEY)||'{}')}catch{return{}}}
+function saveUsers(u){localStorage.setItem(USERS_KEY,JSON.stringify(u))}
+function hashSimple(s){let h=0;for(let i=0;i<s.length;i++)h=(Math.imul(31,h)+s.charCodeAt(i))|0;return h.toString(16)}
 
-function getUsers() {
-  try { return JSON.parse(localStorage.getItem(USERS_KEY) || '{}'); } catch { return {}; }
-}
-function saveUsers(users) {
-  localStorage.setItem(USERS_KEY, JSON.stringify(users));
-}
-function hashSimple(str) {
-  // simple non-cryptographic hash for demo purposes
-  let h = 0;
-  for (let i = 0; i < str.length; i++) {
-    h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
-  }
-  return h.toString(16);
-}
+// SESSION
+function getSession(){try{return JSON.parse(sessionStorage.getItem('nexora_session')||'null')}catch{return null}}
+function setSession(u){sessionStorage.setItem('nexora_session',JSON.stringify(u))}
+function clearSession(){sessionStorage.removeItem('nexora_session')}
 
-// ─── SESSION ───
-function getSession() {
-  try { return JSON.parse(sessionStorage.getItem('nexora_session') || 'null'); } catch { return null; }
+// NAV UI
+function updateNavUI(){
+  const s=getSession();
+  const gn=document.getElementById('guestNav');
+  const un=document.getElementById('userNav');
+  if(s){
+    gn.style.display='none';un.style.display='flex';
+    document.getElementById('userEmailLabel').textContent=s.email;
+    document.getElementById('userAvatar').textContent=(s.nome?s.nome[0]:s.email[0]).toUpperCase();
+  }else{gn.style.display='flex';un.style.display='none';}
 }
-function setSession(user) {
-  sessionStorage.setItem('nexora_session', JSON.stringify(user));
-}
-function clearSession() {
-  sessionStorage.removeItem('nexora_session');
-}
+function logout(){clearSession();updateNavUI();showToast('Hai effettuato il logout.');}
 
-// ─── UI STATE ───
-function updateNavUI() {
-  const session = getSession();
-  const guestNav = document.getElementById('guestNav');
-  const userNav = document.getElementById('userNav');
-  const emailLabel = document.getElementById('userEmailLabel');
-  const avatar = document.getElementById('userAvatar');
-  if (session) {
-    guestNav.style.display = 'none';
-    userNav.style.display = 'flex';
-    emailLabel.textContent = session.email;
-    avatar.textContent = (session.nome ? session.nome[0] : session.email[0]).toUpperCase();
-  } else {
-    guestNav.style.display = 'flex';
-    userNav.style.display = 'none';
-  }
+// LOGIN
+function login(){
+  const email=document.getElementById('loginEmail').value.trim();
+  const pass=document.getElementById('loginPass').value;
+  const msg=document.getElementById('loginMsg');
+  const btn=document.getElementById('loginBtn');
+  const bt=document.getElementById('loginBtnText');
+  const sp=document.getElementById('loginSpinner');
+  msg.className='status-msg';msg.style.display='none';
+  if(!email||!pass){showMsg(msg,'Compila tutti i campi.','error');return;}
+  btn.disabled=true;bt.style.display='none';sp.style.display='block';
+  setTimeout(()=>{
+    const u=getUsers()[email.toLowerCase()];
+    if(u&&u.passHash===hashSimple(pass)){setSession({email:u.email,nome:u.nome});updateNavUI();closeLogin();showToast(`Benvenuto, ${u.nome||u.email}! 👋`);}
+    else{showMsg(msg,'Email o password errati. Riprova.','error');}
+    btn.disabled=false;bt.style.display='inline';sp.style.display='none';
+  },900);
 }
 
-function logout() {
-  clearSession();
-  updateNavUI();
-  showToast('Hai effettuato il logout.');
-}
-
-// ─── LOGIN ───
-function login() {
-  const email = document.getElementById('loginEmail').value.trim();
-  const pass = document.getElementById('loginPass').value;
-  const msg = document.getElementById('loginMsg');
-  const btn = document.getElementById('loginBtn');
-  const btnText = document.getElementById('loginBtnText');
-  const spinner = document.getElementById('loginSpinner');
-
-  msg.className = 'status-msg';
-  msg.style.display = 'none';
-
-  if (!email || !pass) {
-    showMsg(msg, 'Compila tutti i campi.', 'error');
-    return;
-  }
-
-  // Loading state
-  btn.disabled = true;
-  btnText.style.display = 'none';
-  spinner.style.display = 'block';
-
-  setTimeout(() => {
-    const users = getUsers();
-    const user = users[email.toLowerCase()];
-    if (user && user.passHash === hashSimple(pass)) {
-      setSession({ email: user.email, nome: user.nome });
-      updateNavUI();
-      closeLogin();
-      showToast(`Benvenuto, ${user.nome || user.email}! 👋`);
-    } else {
-      showMsg(msg, 'Email o password errati. Riprova.', 'error');
+// REGISTER
+function register(){
+  const nome=document.getElementById('regNome').value.trim();
+  const cognome=document.getElementById('regCognome').value.trim();
+  const email=document.getElementById('regEmail').value.trim();
+  const pass=document.getElementById('regPass').value;
+  const pass2=document.getElementById('regPass2').value;
+  const privacy=document.getElementById('privacyCheck').checked;
+  const msg=document.getElementById('regMsg');
+  const btn=document.getElementById('regBtn');
+  const bt=document.getElementById('regBtnText');
+  const sp=document.getElementById('regSpinner');
+  msg.className='status-msg';msg.style.display='none';
+  if(!nome||!cognome||!email||!pass||!pass2){showMsg(msg,'Compila tutti i campi.','error');return;}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showMsg(msg,'Email non valida.','error');return;}
+  if(pass.length<8){showMsg(msg,'Password minimo 8 caratteri.','error');return;}
+  if(pass!==pass2){showMsg(msg,'Le password non coincidono.','error');return;}
+  if(!privacy){showMsg(msg,'Accetta i termini per continuare.','error');return;}
+  btn.disabled=true;bt.style.display='none';sp.style.display='block';
+  setTimeout(()=>{
+    const users=getUsers();
+    if(users[email.toLowerCase()]){showMsg(msg,'Email già registrata.','error');}
+    else{
+      users[email.toLowerCase()]={email,nome,cognome,passHash:hashSimple(pass),registratoIl:new Date().toISOString()};
+      saveUsers(users);setSession({email,nome});updateNavUI();closeRegister();showToast(`Benvenuto in Nexora, ${nome}! ⚡`);
     }
-    btn.disabled = false;
-    btnText.style.display = 'inline';
-    spinner.style.display = 'none';
-  }, 900);
+    btn.disabled=false;bt.style.display='inline';sp.style.display='none';
+  },1000);
 }
 
-// ─── REGISTER ───
-function register() {
-  const nome = document.getElementById('regNome').value.trim();
-  const cognome = document.getElementById('regCognome').value.trim();
-  const email = document.getElementById('regEmail').value.trim();
-  const pass = document.getElementById('regPass').value;
-  const pass2 = document.getElementById('regPass2').value;
-  const privacy = document.getElementById('privacyCheck').checked;
-  const msg = document.getElementById('regMsg');
-  const btn = document.getElementById('regBtn');
-  const btnText = document.getElementById('regBtnText');
-  const spinner = document.getElementById('regSpinner');
-
-  msg.className = 'status-msg';
-  msg.style.display = 'none';
-
-  if (!nome || !cognome || !email || !pass || !pass2) {
-    showMsg(msg, 'Compila tutti i campi.', 'error'); return;
-  }
-  if (!isValidEmail(email)) {
-    showMsg(msg, 'Inserisci un indirizzo email valido.', 'error'); return;
-  }
-  if (pass.length < 8) {
-    showMsg(msg, 'La password deve essere di almeno 8 caratteri.', 'error'); return;
-  }
-  if (pass !== pass2) {
-    showMsg(msg, 'Le password non coincidono.', 'error'); return;
-  }
-  if (!privacy) {
-    showMsg(msg, 'Devi accettare i termini per continuare.', 'error'); return;
-  }
-
-  btn.disabled = true;
-  btnText.style.display = 'none';
-  spinner.style.display = 'block';
-
-  setTimeout(() => {
-    const users = getUsers();
-    if (users[email.toLowerCase()]) {
-      showMsg(msg, 'Email già registrata. Prova ad accedere.', 'error');
-    } else {
-      users[email.toLowerCase()] = {
-        email,
-        nome,
-        cognome,
-        passHash: hashSimple(pass),
-        registratoIl: new Date().toISOString()
-      };
-      saveUsers(users);
-      setSession({ email, nome });
-      updateNavUI();
-      closeRegister();
-      showToast(`Benvenuto in Nexora, ${nome}! ⚡`);
-    }
-    btn.disabled = false;
-    btnText.style.display = 'inline';
-    spinner.style.display = 'none';
-  }, 1000);
-}
-
-// ─── HELPERS ───
-function isValidEmail(e) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
-}
-
-function showMsg(el, text, type) {
-  el.textContent = text;
-  el.className = 'status-msg ' + type;
-}
-
-function showToast(msg) {
-  const t = document.createElement('div');
-  t.textContent = msg;
-  Object.assign(t.style, {
-    position:'fixed',bottom:'80px',left:'50%',transform:'translateX(-50%) translateY(20px)',
-    background:'var(--navy)',color:'#fff',padding:'14px 28px',borderRadius:'50px',
-    fontFamily:'DM Sans,sans-serif',fontSize:'15px',fontWeight:'500',
-    boxShadow:'0 8px 32px rgba(0,0,0,0.3)',zIndex:9999,
-    opacity:'0',transition:'all 0.35s',whiteSpace:'nowrap'
-  });
+// HELPERS
+function showMsg(el,text,type){el.textContent=text;el.className='status-msg '+type;}
+function showToast(msg){
+  const t=document.createElement('div');t.textContent=msg;
+  Object.assign(t.style,{position:'fixed',bottom:'80px',left:'50%',transform:'translateX(-50%) translateY(20px)',background:'var(--navy)',color:'#fff',padding:'14px 28px',borderRadius:'50px',fontFamily:'DM Sans,sans-serif',fontSize:'15px',fontWeight:'500',boxShadow:'0 8px 32px rgba(0,0,0,0.3)',zIndex:'99999',opacity:'0',transition:'all 0.35s',whiteSpace:'nowrap'});
   document.body.appendChild(t);
-  requestAnimationFrame(() => {
-    t.style.opacity = '1';
-    t.style.transform = 'translateX(-50%) translateY(0)';
-  });
-  setTimeout(() => {
-    t.style.opacity = '0';
-    setTimeout(() => t.remove(), 400);
-  }, 3000);
+  requestAnimationFrame(()=>{t.style.opacity='1';t.style.transform='translateX(-50%) translateY(0)';});
+  setTimeout(()=>{t.style.opacity='0';setTimeout(()=>t.remove(),400);},3000);
 }
-
-// ─── PASSWORD STRENGTH ───
-function checkStrength(val) {
-  const fill = document.getElementById('strengthFill');
-  let score = 0;
-  if (val.length >= 8) score++;
-  if (/[A-Z]/.test(val)) score++;
-  if (/[0-9]/.test(val)) score++;
-  if (/[^A-Za-z0-9]/.test(val)) score++;
-  const pct = (score / 4) * 100;
-  const colors = ['','#ef4444','#f59e0b','#10b981','#059669'];
-  fill.style.width = pct + '%';
-  fill.style.background = colors[score] || '#e5e7eb';
+function checkStrength(val){
+  const fill=document.getElementById('strengthFill');let s=0;
+  if(val.length>=8)s++;if(/[A-Z]/.test(val))s++;if(/[0-9]/.test(val))s++;if(/[^A-Za-z0-9]/.test(val))s++;
+  fill.style.width=(s/4*100)+'%';fill.style.background=['','#ef4444','#f59e0b','#10b981','#059669'][s]||'#e5e7eb';
 }
+function updateFileName(input){document.getElementById('fileName').textContent=input.files[0]?'✓ '+input.files[0].name:'';}
 
-// ─── MODAL CONTROLS ───
-function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+// ═══════════════════════════════════════
+//  MODAL CONTROLS — visibilty/opacity pattern
+// ═══════════════════════════════════════
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
 
-function openLogin() { clearMsgs(); openModal('loginModal'); }
-function closeLogin() { closeModal('loginModal'); }
-function openRegister() { clearMsgs(); openModal('registerModal'); }
-function closeRegister() { closeModal('registerModal'); }
-function openWork() { openModal('workPopup'); }
-function closeWork() { closeModal('workPopup'); }
-function openPdf() { openModal('pdfModal'); }
-function closePdf() { closeModal('pdfModal'); }
-function openTeam() { document.getElementById('teamPopup').classList.add('open'); document.body.style.overflow='hidden'; }
-function closeTeam() { document.getElementById('teamPopup').classList.remove('open'); document.body.style.overflow=''; }
-function handleTeamBackdrop(e) { if(e.target === document.getElementById('teamPopup')) closeTeam(); }
+function openLogin(){clearMsgs();openModal('loginModal');}
+function closeLogin(){closeModal('loginModal');}
+function openRegister(){clearMsgs();openModal('registerModal');}
+function closeRegister(){closeModal('registerModal');}
+function openWork(){openModal('workPopup');}
+function closeWork(){closeModal('workPopup');}
+function openPdf(){openModal('pdfModal');}
+function closePdf(){closeModal('pdfModal');}
+function openTeam(){document.getElementById('teamPopup').classList.add('open');document.body.style.overflow='hidden';}
+function closeTeam(){document.getElementById('teamPopup').classList.remove('open');document.body.style.overflow='';}
 
-function clearMsgs() {
-  ['loginMsg','regMsg'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) { el.className = 'status-msg'; el.style.display = 'none'; }
-  });
-}
+function clearMsgs(){['loginMsg','regMsg'].forEach(id=>{const el=document.getElementById(id);if(el){el.className='status-msg';el.style.display='none';}});}
+function switchToRegister(){closeLogin();setTimeout(openRegister,200);}
+function switchToLogin(){closeRegister();setTimeout(openLogin,200);}
+function showForgot(){showMsg(document.getElementById('loginMsg'),'Contattaci su WhatsApp o via email per reimpostare la password.','info');}
 
-function switchToRegister() { closeLogin(); setTimeout(openRegister, 200); }
-function switchToLogin() { closeRegister(); setTimeout(openLogin, 200); }
-
-function showForgot() {
-  const msg = document.getElementById('loginMsg');
-  showMsg(msg, 'Contattaci su WhatsApp o via email per reimpostare la password.', 'info');
-}
-
-// Close modals clicking backdrop
-document.querySelectorAll('.modal').forEach(m => {
-  m.addEventListener('click', e => {
-    if (e.target === m) m.classList.remove('open');
-  });
+// Chiudi cliccando backdrop
+document.querySelectorAll('.modal').forEach(m=>{
+  m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow='';}});
+});
+document.getElementById('teamPopup').addEventListener('click',e=>{
+  if(e.target===document.getElementById('teamPopup'))closeTeam();
 });
 
-// ─── HEADER SCROLL ───
-window.addEventListener('scroll', () => {
-  document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
-});
+// HEADER SCROLL
+window.addEventListener('scroll',()=>{document.querySelector('header').classList.toggle('scrolled',window.scrollY>50);});
 
-// ─── CARD REVEAL (CSS animation handles this now) ───
-
-// ─── COUNTERS ───
-document.querySelectorAll('.counter').forEach(counter => {
-  const target = +counter.dataset.target;
-  let current = 0;
-  const step = target / 80;
-  const tick = () => {
-    if (current < target) {
-      current = Math.min(current + step, target);
-      counter.textContent = Math.ceil(current);
-      requestAnimationFrame(tick);
-    } else {
-      counter.textContent = target + (counter.dataset.suffix || '');
-    }
-  };
+// COUNTERS
+document.querySelectorAll('.counter').forEach(counter=>{
+  const target=+counter.dataset.target;let cur=0;const step=target/80;
+  const tick=()=>{if(cur<target){cur=Math.min(cur+step,target);counter.textContent=Math.ceil(cur);requestAnimationFrame(tick);}else{counter.textContent=target;}};
   tick();
 });
+let cc=0;const cel=document.getElementById('clientCounter');
+const tck=()=>{if(cc<2625){cc=Math.min(cc+2625/80,2625);cel.textContent=Math.ceil(cc).toLocaleString('it-IT');requestAnimationFrame(tck);}else{cel.textContent=(2625).toLocaleString('it-IT');}};tck();
 
-// Client counter
-let clientCurrent = 0;
-const clientTarget = 2625;
-const clientEl = document.getElementById('clientCounter');
-const clientStep = clientTarget / 80;
-const tickClient = () => {
-  if (clientCurrent < clientTarget) {
-    clientCurrent = Math.min(clientCurrent + clientStep, clientTarget);
-    clientEl.textContent = Math.ceil(clientCurrent).toLocaleString('it-IT');
-    requestAnimationFrame(tickClient);
-  } else {
-    clientEl.textContent = clientTarget.toLocaleString('it-IT');
-  }
-};
-tickClient();
+let visitors=118+Math.floor(Math.random()*30);
+function updateVisitors(){visitors+=Math.floor(Math.random()*5)-2;if(visitors<80)visitors=80;document.getElementById('visitorCounter').textContent=visitors;document.getElementById('visitorCounter2').textContent=visitors;}
+setInterval(updateVisitors,4000);
 
-// Visitor counter
-let visitors = 118 + Math.floor(Math.random() * 30);
-function updateVisitors() {
-  visitors += Math.floor(Math.random() * 5) - 2;
-  if (visitors < 80) visitors = 80;
-  document.getElementById('visitorCounter').textContent = visitors;
-  document.getElementById('visitorCounter2').textContent = visitors;
-}
-setInterval(updateVisitors, 4000);
-
-// ─�
+updateNavUI();
+</script>
+</body>
+</html>
