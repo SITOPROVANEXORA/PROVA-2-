@@ -414,14 +414,14 @@ footer{
 /* ─── TEAM POPUP ─── */
 .team-popup{
   position:fixed;left:0;bottom:-100%;width:100%;
-  max-height:80vh;overflow-y:auto;
+  max-height:88vh;overflow-y:auto;
   background:#fff;z-index:4000;
   border-radius:28px 28px 0 0;
   box-shadow:0 -20px 60px rgba(0,0,0,0.2);
   transition:bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);
 }
 .team-popup.active{bottom:0}
-.team-box{max-width:1100px;margin:auto;padding:50px 40px}
+.team-box{max-width:1000px;margin:auto;padding:48px 36px 64px}
 .team-handle{
   width:40px;height:4px;background:#e5e7eb;border-radius:2px;
   margin:0 auto 32px;
@@ -434,20 +434,66 @@ footer{
   color:var(--muted);transition:0.2s;
 }
 .close-team:hover{background:#e8eef8}
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:40px}
-.team-card{
-  background:var(--light);border-radius:24px;padding:36px;
-  text-align:center;border:1px solid var(--border);transition:0.3s;
+.org-wrap{margin-top:44px}
+.org-connector-v{
+  width:2px;height:32px;
+  background:linear-gradient(to bottom,rgba(26,111,219,0.6),rgba(26,111,219,0.15));
+  margin:0 auto;
 }
-.team-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(26,111,219,0.12)}
-.team-card img{
-  width:110px;height:110px;object-fit:cover;border-radius:50%;
-  border:4px solid #fff;box-shadow:0 8px 24px rgba(26,111,219,0.2);
-  margin-bottom:16px;
+.org-branch-bar{
+  position:relative;height:2px;
+  background:rgba(26,111,219,0.2);
+  margin:0 auto;width:72%;
 }
-.team-card h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--navy)}
-.team-role{color:var(--blue);font-weight:600;font-size:13px;margin:4px 0 10px}
-.team-desc{font-size:14px;color:var(--muted);line-height:1.6}
+.org-branch-bar::before,.org-branch-bar::after{
+  content:'';position:absolute;top:0;
+  width:2px;height:24px;background:rgba(26,111,219,0.2);
+}
+.org-branch-bar::before{left:0}
+.org-branch-bar::after{right:0}
+.org-branch-center{
+  position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:2px;height:24px;background:rgba(26,111,219,0.2);
+}
+.org-children-3{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:18px;margin-top:0;
+}
+@media(max-width:720px){
+  .org-children-3{grid-template-columns:1fr}
+  .org-branch-bar,.org-branch-center{display:none}
+}
+.org-card{
+  background:var(--light);border:1px solid var(--border);
+  border-radius:22px;padding:30px 22px;
+  text-align:center;position:relative;transition:all 0.35s;
+}
+.org-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(26,111,219,0.13);border-color:rgba(26,111,219,0.25)}
+.org-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:22px 22px 0 0}
+.org-card.ceo::after{background:linear-gradient(90deg,#b8860b,#f0c040)}
+.org-card.coo::after{background:linear-gradient(90deg,var(--navy),var(--blue2))}
+.org-card.ops::after{background:linear-gradient(90deg,#0d7377,#14a085)}
+.org-card.tech::after{background:linear-gradient(90deg,#4338ca,#818cf8)}
+.org-avatar{
+  width:68px;height:68px;border-radius:50%;margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:#fff;
+}
+.org-card.ceo .org-avatar{background:linear-gradient(135deg,#b8860b,#daa520);box-shadow:0 6px 20px rgba(184,134,11,0.3)}
+.org-card.coo .org-avatar{background:linear-gradient(135deg,var(--navy),var(--blue2));box-shadow:0 6px 20px rgba(26,111,219,0.25)}
+.org-card.ops .org-avatar{background:linear-gradient(135deg,#0d7377,#14a085);box-shadow:0 6px 20px rgba(13,115,119,0.25)}
+.org-card.tech .org-avatar{background:linear-gradient(135deg,#4338ca,#6366f1);box-shadow:0 6px 20px rgba(67,56,202,0.25)}
+.org-badge{
+  display:inline-block;padding:4px 14px;border-radius:50px;
+  font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;
+}
+.org-card.ceo .org-badge{background:rgba(184,134,11,0.1);border:1px solid rgba(184,134,11,0.3);color:#92650a}
+.org-card.coo .org-badge{background:rgba(9,30,58,0.08);border:1px solid rgba(9,30,58,0.18);color:var(--navy)}
+.org-card.ops .org-badge{background:rgba(13,115,119,0.08);border:1px solid rgba(13,115,119,0.2);color:#0d7377}
+.org-card.tech .org-badge{background:rgba(67,56,202,0.08);border:1px solid rgba(67,56,202,0.2);color:#4338ca}
+.org-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.org-desc{font-size:13px;color:var(--muted);line-height:1.55}
+.org-top-wrap{max-width:340px;margin:0 auto}
 
 /* ─── WORK MODAL ─── */
 .work-modal .modal-box{max-width:540px}
@@ -734,7 +780,7 @@ footer{
       <div class="footer-copy">© 2026 NEXORA Energia. Tutti i diritti riservati.</div>
     </div>
     <div class="footer-contacts">
-      <a href="mailto:infonexora@nexorasrlroma.it">✉ infonexora@nexorasrlroma.it</a>
+      <a href="/cdn-cgi/l/email-protection#365f58505958534e5944577658534e59445745445a44595b57185f42">✉ <span class="__cf_email__" data-cfemail="6a03040c05040f1205180b2a040f1205180b1918061805070b44031e">[email&#160;protected]</span></a>
       <a href="tel:+393272179689">📞 +39 327 217 9689</a>
       <span>📍 Via Gaio Melisso 57, Roma</span>
     </div>
@@ -745,25 +791,54 @@ footer{
 <div id="teamPopup" class="team-popup">
   <div class="team-box">
     <div class="team-handle"></div>
-    <button class="close-team" onclick="closeTeam()">✕</button>
-    <div class="section-tag">Il nostro team</div>
-    <h2 class="section-title">Chi siamo</h2>
-    <div class="team-grid">
-      <div class="team-card">
-        <img src="consulente1.jpg" alt="Giuseppe Cannale">
-        <h3>Giuseppe Cannale</h3>
-        <div class="team-role">Direttore</div>
-        <p class="team-desc">Esperto nel settore energia da oltre 30 anni. Imprenditore nel settore finanziario ed energetico.</p>
+    <button class="close-team" onclick="closeTeam()">&#x2715;</button>
+    <div class="section-tag">Struttura organizzativa</div>
+    <h2 class="section-title">Il team Nexora</h2>
+
+    <div class="org-wrap">
+
+      <!-- CEO -->
+      <div class="org-top-wrap">
+        <div class="org-card ceo">
+          <div class="org-avatar">GC</div>
+          <div class="org-badge">Chief Executive Officer</div>
+          <div class="org-name">Giuseppe Cannale</div>
+          <p class="org-desc">Fondatore e guida strategica di Nexora. Imprenditore con oltre 30 anni di esperienza nel settore energetico e finanziario italiano. Supervisiona la visione aziendale, le partnership istituzionali e lo sviluppo del business.</p>
+        </div>
       </div>
-      <div class="team-card">
-        <img src="consulente2.jpg" alt="Luca Forti">
-        <h3>Luca Forti</h3>
-        <div class="team-role">Co-Direttore</div>
-        <p class="team-desc">Esperto in consulenze finanziarie e gestione dei punti Unsic a Roma. Imprenditore nel settore amministrativo.</p>
+
+      <div class="org-connector-v"></div>
+      <div class="org-branch-bar"><div class="org-branch-center"></div></div>
+
+      <!-- COO · Head of Admin · Digital Manager -->
+      <div class="org-children-3">
+
+        <div class="org-card coo">
+          <div class="org-avatar">LF</div>
+          <div class="org-badge">Chief Operating Officer</div>
+          <div class="org-name">Luca Forti</div>
+          <p class="org-desc">Co-fondatore e responsabile delle operazioni aziendali. Esperto in consulenza finanziaria e nella gestione dei punti Unsic a Roma. Coordina i processi interni e le relazioni con i clienti strategici.</p>
+        </div>
+
+        <div class="org-card ops">
+          <div class="org-avatar">SC</div>
+          <div class="org-badge">Head of Administration</div>
+          <div class="org-name">Samantha Carlaccini</div>
+          <p class="org-desc">Responsabile dell'amministrazione e del back office aziendale. Gestisce la documentazione contrattuale, le pratiche clienti, la compliance interna e il coordinamento dei flussi operativi quotidiani.</p>
+        </div>
+
+        <div class="org-card tech">
+          <div class="org-avatar">AM</div>
+          <div class="org-badge">Digital &amp; Software Manager</div>
+          <div class="org-name">Alessio Mariutac</div>
+          <p class="org-desc">Responsabile della gestione tecnologica e della presenza digitale di Nexora. Supervisiona lo sviluppo software, i sistemi informativi aziendali, la piattaforma web e le strategie di comunicazione online.</p>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
+
 
 <!-- ═══════════════ LOGIN MODAL ═══════════════ -->
 <div id="loginModal" class="modal">
@@ -908,7 +983,7 @@ footer{
 <!-- WhatsApp -->
 <a class="whatsapp" href="https://wa.me/393272179689" target="_blank" title="Contattaci su WhatsApp">💬</a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ─── USERS STORAGE (localStorage con hashing semplice) ───
 const USERS_KEY = 'nexora_users';
 
@@ -1203,14 +1278,4 @@ function updateVisitors() {
 }
 setInterval(updateVisitors, 4000);
 
-// ─── FILE UPLOAD NAME ───
-function updateFileName(input) {
-  const el = document.getElementById('fileName');
-  el.textContent = input.files[0] ? '✓ ' + input.files[0].name : '';
-}
-
-// ─── INIT ───
-updateNavUI();
-</script>
-</body>
-</html>
+// ─�
