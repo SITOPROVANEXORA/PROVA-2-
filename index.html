@@ -161,8 +161,16 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
   background:var(--light);border-radius:24px;padding:40px 36px;
   border:1px solid var(--border);
   transition:all 0.4s;cursor:pointer;
-  opacity:0;transform:translateY(40px);
+  opacity:1;transform:translateY(0);
   position:relative;overflow:hidden;
+  animation:cardIn 0.6s ease both;
+}
+.service-card:nth-child(1){animation-delay:0.1s}
+.service-card:nth-child(2){animation-delay:0.22s}
+.service-card:nth-child(3){animation-delay:0.34s}
+@keyframes cardIn{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
 }
 .service-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:3px;
@@ -170,7 +178,7 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
   transform:scaleX(0);transform-origin:left;transition:0.4s;
 }
 .service-card:hover::before{transform:scaleX(1)}
-.service-card.show{opacity:1;transform:translateY(0)}
+.service-card.show{opacity:1;transform:translateY(0)} /* kept for compat */
 .service-card:hover{
   transform:translateY(-8px);
   box-shadow:0 24px 60px rgba(26,111,219,0.12);
@@ -411,17 +419,23 @@ footer{
 .strength-bar{height:3px;border-radius:2px;background:#e5e7eb;margin-top:6px;overflow:hidden}
 .strength-fill{height:100%;border-radius:2px;transition:all 0.3s;width:0}
 
-/* ─── TEAM POPUP ─── */
-.team-popup{
-  position:fixed;left:0;bottom:-100%;width:100%;
-  max-height:88vh;overflow-y:auto;
-  background:#fff;z-index:4000;
-  border-radius:28px 28px 0 0;
-  box-shadow:0 -20px 60px rgba(0,0,0,0.2);
-  transition:bottom 0.5s cubic-bezier(0.34,1.56,0.64,1);
+/* ─── TEAM MODAL ─── */
+.team-modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(9,30,58,0.75);backdrop-filter:blur(8px);
+  z-index:5000;justify-content:center;align-items:flex-end;
+  animation:fadeIn 0.2s ease;
 }
-.team-popup.active{bottom:0}
-.team-box{max-width:1000px;margin:auto;padding:48px 36px 64px}
+.team-modal.open{display:flex}
+.team-modal-box{
+  background:#fff;
+  border-radius:28px 28px 0 0;
+  width:100%;max-height:88vh;overflow-y:auto;
+  box-shadow:0 -20px 60px rgba(0,0,0,0.25);
+  animation:slideUp 0.4s cubic-bezier(0.34,1.2,0.64,1) both;
+}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.team-box{max-width:1000px;margin:auto;padding:48px 36px 64px;position:relative}
 .team-handle{
   width:40px;height:4px;background:#e5e7eb;border-radius:2px;
   margin:0 auto 32px;
@@ -434,6 +448,7 @@ footer{
   color:var(--muted);transition:0.2s;
 }
 .close-team:hover{background:#e8eef8}
+/* ─── ORG CHART ─── */
 .org-wrap{margin-top:44px}
 .org-connector-v{
   width:2px;height:32px;
@@ -788,57 +803,55 @@ footer{
 </footer>
 
 <!-- ═══════════════ TEAM POPUP ═══════════════ -->
-<div id="teamPopup" class="team-popup">
-  <div class="team-box">
-    <div class="team-handle"></div>
-    <button class="close-team" onclick="closeTeam()">&#x2715;</button>
-    <div class="section-tag">Struttura organizzativa</div>
-    <h2 class="section-title">Il team Nexora</h2>
+<div id="teamPopup" class="team-modal" onclick="handleTeamBackdrop(event)">
+  <div class="team-modal-box">
+    <div class="team-box">
+      <div class="team-handle"></div>
+      <button class="close-team" onclick="closeTeam()">&#x2715;</button>
+      <div class="section-tag">Struttura organizzativa</div>
+      <h2 class="section-title">Il team Nexora</h2>
 
-    <div class="org-wrap">
+      <div class="org-wrap">
 
-      <!-- CEO -->
-      <div class="org-top-wrap">
-        <div class="org-card ceo">
-          <div class="org-avatar">GC</div>
-          <div class="org-badge">Chief Executive Officer</div>
-          <div class="org-name">Giuseppe Cannale</div>
-          <p class="org-desc">Fondatore e guida strategica di Nexora. Imprenditore con oltre 30 anni di esperienza nel settore energetico e finanziario italiano. Supervisiona la visione aziendale, le partnership istituzionali e lo sviluppo del business.</p>
-        </div>
-      </div>
-
-      <div class="org-connector-v"></div>
-      <div class="org-branch-bar"><div class="org-branch-center"></div></div>
-
-      <!-- COO · Head of Admin · Digital Manager -->
-      <div class="org-children-3">
-
-        <div class="org-card coo">
-          <div class="org-avatar">LF</div>
-          <div class="org-badge">Chief Operating Officer</div>
-          <div class="org-name">Luca Forti</div>
-          <p class="org-desc">Co-fondatore e responsabile delle operazioni aziendali. Esperto in consulenza finanziaria e nella gestione dei punti Unsic a Roma. Coordina i processi interni e le relazioni con i clienti strategici.</p>
+        <!-- CEO -->
+        <div class="org-top-wrap">
+          <div class="org-card ceo">
+            <div class="org-avatar">GC</div>
+            <div class="org-badge">Chief Executive Officer</div>
+            <div class="org-name">Giuseppe Cannale</div>
+            <p class="org-desc">Fondatore e guida strategica di Nexora. Imprenditore con oltre 30 anni di esperienza nel settore energetico e finanziario italiano. Supervisiona la visione aziendale, le partnership istituzionali e lo sviluppo del business.</p>
+          </div>
         </div>
 
-        <div class="org-card ops">
-          <div class="org-avatar">SC</div>
-          <div class="org-badge">Head of Administration</div>
-          <div class="org-name">Samantha Carlaccini</div>
-          <p class="org-desc">Responsabile dell'amministrazione e del back office aziendale. Gestisce la documentazione contrattuale, le pratiche clienti, la compliance interna e il coordinamento dei flussi operativi quotidiani.</p>
-        </div>
+        <div class="org-connector-v"></div>
+        <div class="org-branch-bar"><div class="org-branch-center"></div></div>
 
-        <div class="org-card tech">
-          <div class="org-avatar">AM</div>
-          <div class="org-badge">Digital &amp; Software Manager</div>
-          <div class="org-name">Alessio Mariutac</div>
-          <p class="org-desc">Responsabile della gestione tecnologica e della presenza digitale di Nexora. Supervisiona lo sviluppo software, i sistemi informativi aziendali, la piattaforma web e le strategie di comunicazione online.</p>
+        <!-- Livello 2 -->
+        <div class="org-children-3">
+          <div class="org-card coo">
+            <div class="org-avatar">LF</div>
+            <div class="org-badge">Chief Operating Officer</div>
+            <div class="org-name">Luca Forti</div>
+            <p class="org-desc">Co-fondatore e responsabile delle operazioni aziendali. Esperto in consulenza finanziaria e nella gestione dei punti Unsic a Roma. Coordina i processi interni e le relazioni con i clienti strategici.</p>
+          </div>
+          <div class="org-card ops">
+            <div class="org-avatar">SC</div>
+            <div class="org-badge">Head of Administration</div>
+            <div class="org-name">Samantha Carlaccini</div>
+            <p class="org-desc">Responsabile dell'amministrazione e del back office aziendale. Gestisce la documentazione contrattuale, le pratiche clienti, la compliance interna e il coordinamento dei flussi operativi quotidiani.</p>
+          </div>
+          <div class="org-card tech">
+            <div class="org-avatar">AM</div>
+            <div class="org-badge">Digital &amp; Software Manager</div>
+            <div class="org-name">Alessio Mariutac</div>
+            <p class="org-desc">Responsabile della gestione tecnologica e della presenza digitale di Nexora. Supervisiona lo sviluppo software, i sistemi informativi aziendali, la piattaforma web e le strategie di comunicazione online.</p>
+          </div>
         </div>
 
       </div>
     </div>
   </div>
 </div>
-
 
 <!-- ═══════════════ LOGIN MODAL ═══════════════ -->
 <div id="loginModal" class="modal">
@@ -1193,8 +1206,9 @@ function openWork() { openModal('workPopup'); }
 function closeWork() { closeModal('workPopup'); }
 function openPdf() { openModal('pdfModal'); }
 function closePdf() { closeModal('pdfModal'); }
-function openTeam() { document.getElementById('teamPopup').classList.add('active'); }
-function closeTeam() { document.getElementById('teamPopup').classList.remove('active'); }
+function openTeam() { document.getElementById('teamPopup').classList.add('open'); }
+function closeTeam() { document.getElementById('teamPopup').classList.remove('open'); }
+function handleTeamBackdrop(e) { if(e.target === document.getElementById('teamPopup')) closeTeam(); }
 
 function clearMsgs() {
   ['loginMsg','regMsg'].forEach(id => {
@@ -1223,17 +1237,7 @@ window.addEventListener('scroll', () => {
   document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ─── CARD REVEAL ───
-const cards = document.querySelectorAll('.service-card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('show'), i * 120);
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.15 });
-cards.forEach(c => observer.observe(c));
+// ─── CARD REVEAL (CSS animation handles this now) ───
 
 // ─── COUNTERS ───
 document.querySelectorAll('.counter').forEach(counter => {
