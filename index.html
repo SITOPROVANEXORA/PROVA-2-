@@ -10,8 +10,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:#f7faff;color:var(--text);overflow-x:hidden;}
-
-/* HEADER */
 header{position:fixed;top:0;width:100%;z-index:1000;padding:0 60px;height:76px;display:flex;align-items:center;justify-content:space-between;background:rgba(9,30,58,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);transition:all 0.4s;}
 header.scrolled{background:var(--navy);box-shadow:0 4px 30px rgba(0,0,0,0.3);}
 .logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -21,8 +19,6 @@ nav{display:flex;align-items:center;gap:8px}
 nav a{color:rgba(255,255,255,0.82);text-decoration:none;font-family:'Syne',sans-serif;font-weight:600;font-size:14px;padding:9px 20px;border-radius:50px;transition:all 0.25s;letter-spacing:0.3px;}
 nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
 .nav-btn{background:linear-gradient(135deg,var(--blue),var(--accent));color:#fff !important;padding:9px 22px !important;box-shadow:0 4px 14px rgba(26,111,219,0.4);}
-
-/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 60%,#0a2545 100%);position:relative;overflow:hidden;padding:120px 60px 80px;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 75% 50%,rgba(0,212,255,0.08) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 80%,rgba(26,111,219,0.12) 0%,transparent 60%);}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1200px;width:100%;align-items:center;position:relative;z-index:1;}
@@ -42,13 +38,9 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
 .hero-float{position:absolute;bottom:-20px;left:-24px;background:#fff;border-radius:16px;padding:16px 22px;box-shadow:0 8px 32px rgba(0,0,0,0.15);display:flex;align-items:center;gap:12px;}
 .hero-float .stat{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--blue)}
 .hero-float .lbl{font-size:12px;color:var(--muted);line-height:1.4}
-
-/* SECTION COMMON */
 .section-tag{display:inline-block;background:rgba(26,111,219,0.08);color:var(--blue);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;border:1px solid rgba(26,111,219,0.15);}
 .section-title{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:12px;}
 .section-sub{font-size:17px;color:var(--muted);line-height:1.65}
-
-/* SERVIZI */
 .servizi{padding:110px 60px;background:#fff}
 .servizi-inner{max-width:1200px;margin:auto}
 .servizi-header{text-align:center;margin-bottom:64px}
@@ -65,8 +57,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
 .bolletta-btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:11px 24px;border-radius:50px;text-decoration:none;font-weight:600;font-size:14px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue2));transition:all 0.3s;box-shadow:0 4px 14px rgba(26,111,219,0.3);}
 .bolletta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(26,111,219,0.4)}
 .bolletta-btn::after{content:'→'}
-
-/* NUMERI */
 .numeri{padding:110px 60px;background:var(--navy)}
 .numeri-inner{max-width:1200px;margin:auto;text-align:center}
 .numeri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:60px;}
@@ -74,8 +64,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
 .numero-box:hover{background:rgba(255,255,255,0.09);transform:translateY(-6px)}
 .numero-box h3{font-family:'Syne',sans-serif;font-size:56px;font-weight:800;background:linear-gradient(135deg,var(--blue2),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px;}
 .numero-box p{color:rgba(255,255,255,0.55);font-size:15px}
-
-/* COME FUNZIONA */
 .funziona{padding:110px 60px;background:var(--light)}
 .funziona-inner{max-width:1200px;margin:auto}
 .funziona-header{text-align:center;margin-bottom:64px}
@@ -85,8 +73,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
 .step-num{font-family:'Syne',sans-serif;font-size:72px;font-weight:800;color:rgba(26,111,219,0.1);line-height:1;margin-bottom:20px;}
 .step-card h4{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .step-card p{font-size:15px;color:var(--muted);line-height:1.6}
-
-/* RECENSIONI */
 .recensioni{padding:110px 60px;background:#fff}
 .recensioni-inner{max-width:1200px;margin:auto;text-align:center}
 .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:60px}
@@ -98,8 +84,6 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
 .reviewer-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;}
 .reviewer-name{font-weight:600;font-size:14px;color:var(--navy)}
 .reviewer-loc{font-size:12px;color:var(--muted)}
-
-/* STATS */
 .stats{padding:110px 60px;background:var(--light)}
 .stats-inner{max-width:1200px;margin:auto;text-align:center}
 .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:60px;max-width:700px;margin-left:auto;margin-right:auto}
@@ -107,23 +91,17 @@ nav a:hover{color:#fff;background:rgba(255,255,255,0.1)}
 .stat-box:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(26,111,219,0.1)}
 .stat-number{font-family:'Syne',sans-serif;font-size:54px;font-weight:800;color:var(--blue);margin-bottom:8px;}
 .stat-text{font-size:15px;color:var(--muted)}
-
-/* RISPARMIO */
 .risparmio{padding:110px 60px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);position:relative;overflow:hidden;}
 .risparmio::before{content:'';position:absolute;top:-40%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.07) 0%,transparent 70%);}
 .risparmio-inner{max-width:900px;margin:auto;text-align:center;position:relative}
 .risparmio p{color:rgba(255,255,255,0.6);font-size:17px;line-height:1.7;margin-top:16px}
 .risparmio strong{color:var(--accent)}
 .savings-badge{display:inline-block;margin-top:40px;background:rgba(0,212,255,0.12);border:1px solid rgba(0,212,255,0.3);color:var(--accent);padding:14px 36px;border-radius:50px;font-family:'Syne',sans-serif;font-size:22px;font-weight:700;}
-
-/* MAPPA */
 .mappa{padding:110px 60px;background:#fff}
 .mappa-inner{max-width:1200px;margin:auto}
 .mappa-header{text-align:center;margin-bottom:48px}
 .mappa-address{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:15px;margin-top:10px;}
 .mappa-box{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.1)}
-
-/* FOOTER */
 footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
 .footer-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
 .footer-brand{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff}
@@ -131,40 +109,10 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
 .footer-contacts a{color:rgba(255,255,255,0.6);text-decoration:none;transition:0.2s}
 .footer-contacts a:hover{color:#fff}
 .footer-copy{font-size:12px;opacity:0.5;margin-top:8px}
-
-/* ═══════════════════════════════════════════
-   MODAL FIX DEFINITIVO
-   - display:flex sempre attivo
-   - nascosto con visibility:hidden + opacity:0
-   - .open rende visibile con transizione
-   Questo funziona in TUTTI i browser senza problemi
-═══════════════════════════════════════════ */
-.modal{
-  display:flex !important;
-  position:fixed;inset:0;
-  background:rgba(9,30,58,0.7);
-  backdrop-filter:blur(8px);
-  z-index:9000;
-  justify-content:center;
-  align-items:center;
-  /* NASCOSTO */
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-  transition:opacity 0.25s ease, visibility 0.25s ease;
-}
-.modal.open{
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:auto !important;
-}
+.modal{display:flex !important;position:fixed;inset:0;background:rgba(9,30,58,0.7);backdrop-filter:blur(8px);z-index:9000;justify-content:center;align-items:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.25s ease, visibility 0.25s ease;}
+.modal.open{opacity:1 !important;visibility:visible !important;pointer-events:auto !important;}
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.modal-box{
-  background:#fff;border-radius:28px;width:100%;max-width:440px;
-  padding:48px 44px;position:relative;
-  box-shadow:0 40px 100px rgba(0,0,0,0.3);
-  animation:slideUp 0.3s ease 0.05s both;
-}
+.modal-box{background:#fff;border-radius:28px;width:100%;max-width:440px;padding:48px 44px;position:relative;box-shadow:0 40px 100px rgba(0,0,0,0.3);animation:slideUp 0.3s ease 0.05s both;}
 .modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;border:none;background:var(--light);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px;transition:0.2s;}
 .modal-close:hover{background:#e8eef8;color:var(--navy)}
 .modal-logo{display:flex;align-items:center;gap:10px;margin-bottom:32px;}
@@ -201,8 +149,6 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
 .checkbox-row input[type=checkbox]{margin-top:2px;accent-color:var(--blue)}
 .checkbox-row label{font-size:13px;color:var(--muted);line-height:1.5}
 .checkbox-row a{color:var(--blue)}
-
-/* WORK MODAL */
 .work-modal .modal-box{max-width:540px;max-height:90vh;overflow-y:auto;}
 .form-textarea{width:100%;padding:13px 16px;border-radius:12px;border:1.5px solid #dde5f0;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--navy);background:#fafcff;transition:all 0.25s;outline:none;height:100px;resize:none;}
 .form-textarea:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(26,111,219,0.1)}
@@ -210,40 +156,16 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
 .upload-area:hover{border-color:var(--blue);background:#eff6ff}
 .upload-area p{font-size:13px;color:var(--muted);margin-top:4px}
 .upload-area input{display:none}
-
-/* PDF MODAL */
 .pdf-modal .modal-box{max-width:900px;height:82vh;display:flex;flex-direction:column}
 .pdf-modal iframe{flex:1;border:none;border-radius:12px}
-
-/* ═══════════════════════════════════════════
-   TEAM MODAL — stesso fix definitivo
-═══════════════════════════════════════════ */
-.team-modal{
-  display:flex !important;
-  position:fixed;inset:0;
-  background:rgba(9,30,58,0.75);
-  backdrop-filter:blur(8px);
-  z-index:9000;
-  justify-content:center;
-  align-items:flex-end;
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-  transition:opacity 0.25s ease, visibility 0.25s ease;
-}
-.team-modal.open{
-  opacity:1 !important;
-  visibility:visible !important;
-  pointer-events:auto !important;
-}
+.team-modal{display:flex !important;position:fixed;inset:0;background:rgba(9,30,58,0.75);backdrop-filter:blur(8px);z-index:9000;justify-content:center;align-items:flex-end;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.25s ease, visibility 0.25s ease;}
+.team-modal.open{opacity:1 !important;visibility:visible !important;pointer-events:auto !important;}
 .team-modal-box{background:#fff;border-radius:28px 28px 0 0;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 -20px 60px rgba(0,0,0,0.25);animation:slideUpPanel 0.4s cubic-bezier(0.34,1.2,0.64,1) both;}
 @keyframes slideUpPanel{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .team-box{max-width:1000px;margin:auto;padding:48px 36px 64px;position:relative}
 .team-handle{width:40px;height:4px;background:#e5e7eb;border-radius:2px;margin:0 auto 32px;}
 .close-team{position:absolute;right:24px;top:24px;width:36px;height:36px;border-radius:50%;border:none;background:var(--light);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:0.2s;}
 .close-team:hover{background:#e8eef8}
-
-/* ORG CHART */
 .org-wrap{margin-top:44px}
 .org-connector-v{width:2px;height:32px;background:linear-gradient(to bottom,rgba(26,111,219,0.6),rgba(26,111,219,0.15));margin:0 auto;}
 .org-branch-bar{position:relative;height:2px;background:rgba(26,111,219,0.2);margin:0 auto;width:72%;}
@@ -272,19 +194,13 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
 .org-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:var(--navy);margin-bottom:6px}
 .org-desc{font-size:13px;color:var(--muted);line-height:1.55}
 .org-top-wrap{max-width:340px;margin:0 auto}
-
-/* WHATSAPP */
 .whatsapp{position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:26px;box-shadow:0 8px 24px rgba(37,211,102,0.45);z-index:3000;transition:0.3s;}
 .whatsapp:hover{transform:scale(1.1);box-shadow:0 12px 32px rgba(37,211,102,0.55)}
-
-/* DASHBOARD NAV */
 .user-nav{display:none;align-items:center;gap:14px}
 .user-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;}
 .user-email-label{font-size:13px;color:rgba(255,255,255,0.7)}
 .logout-btn{padding:7px 18px;border-radius:50px;border:1.5px solid rgba(255,255,255,0.25);background:transparent;color:rgba(255,255,255,0.8);font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:0.2s;}
 .logout-btn:hover{border-color:rgba(255,255,255,0.6);color:#fff}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   header{padding:0 24px}
   .hero{padding:100px 24px 60px}
@@ -318,7 +234,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
   <div class="hero-grid">
     <div class="hero-text">
       <div class="hero-badge"><span></span>Energia Italiana</div>
-      <h1>NEXORA<br><em>GAS & LUCE</em></h1>
+      <h1>NEXORA<br><em>GAS &amp; LUCE</em></h1>
       <p class="hero-sub">Risparmia sulla bolletta senza cambiare stile di vita.<br>Consulenza gratuita e trasparente da esperti del settore.</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="openRegister()">Diventa cliente</button>
@@ -443,8 +359,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
       <div class="footer-copy">© 2026 NEXORA Energia. Tutti i diritti riservati.</div>
     </div>
     <div class="footer-contacts">
-      <a href="mailto:infonexora@nexorasrlroma.it">✉ infonexora@nexorasrlroma.it</a>
+      <a href="mailto:info.nexora@nexorasrlroma.it">✉ info.nexora@nexorasrlroma.it</a>
       <a href="tel:+393272179689">📞 +39 327 217 9689</a>
+      <a href="tel:0683790909">☎ 06 83790909</a>
       <span>📍 Via Gaio Melisso 57, Roma</span>
     </div>
   </div>
@@ -575,31 +492,21 @@ footer{background:var(--navy);color:rgba(255,255,255,0.6);padding:48px 60px;}
 <a class="whatsapp" href="https://wa.me/393272179689" target="_blank" title="Contattaci su WhatsApp">💬</a>
 
 <script>
-// STORAGE
 const USERS_KEY='nexora_users';
 function getUsers(){try{return JSON.parse(localStorage.getItem(USERS_KEY)||'{}')}catch{return{}}}
 function saveUsers(u){localStorage.setItem(USERS_KEY,JSON.stringify(u))}
 function hashSimple(s){let h=0;for(let i=0;i<s.length;i++)h=(Math.imul(31,h)+s.charCodeAt(i))|0;return h.toString(16)}
-
-// SESSION
 function getSession(){try{return JSON.parse(sessionStorage.getItem('nexora_session')||'null')}catch{return null}}
 function setSession(u){sessionStorage.setItem('nexora_session',JSON.stringify(u))}
 function clearSession(){sessionStorage.removeItem('nexora_session')}
-
-// NAV UI
 function updateNavUI(){
   const s=getSession();
   const gn=document.getElementById('guestNav');
   const un=document.getElementById('userNav');
-  if(s){
-    gn.style.display='none';un.style.display='flex';
-    document.getElementById('userEmailLabel').textContent=s.email;
-    document.getElementById('userAvatar').textContent=(s.nome?s.nome[0]:s.email[0]).toUpperCase();
-  }else{gn.style.display='flex';un.style.display='none';}
+  if(s){gn.style.display='none';un.style.display='flex';document.getElementById('userEmailLabel').textContent=s.email;document.getElementById('userAvatar').textContent=(s.nome?s.nome[0]:s.email[0]).toUpperCase();}
+  else{gn.style.display='flex';un.style.display='none';}
 }
 function logout(){clearSession();updateNavUI();showToast('Hai effettuato il logout.');}
-
-// LOGIN
 function login(){
   const email=document.getElementById('loginEmail').value.trim();
   const pass=document.getElementById('loginPass').value;
@@ -617,8 +524,6 @@ function login(){
     btn.disabled=false;bt.style.display='inline';sp.style.display='none';
   },900);
 }
-
-// REGISTER
 function register(){
   const nome=document.getElementById('regNome').value.trim();
   const cognome=document.getElementById('regCognome').value.trim();
@@ -640,15 +545,10 @@ function register(){
   setTimeout(()=>{
     const users=getUsers();
     if(users[email.toLowerCase()]){showMsg(msg,'Email già registrata.','error');}
-    else{
-      users[email.toLowerCase()]={email,nome,cognome,passHash:hashSimple(pass),registratoIl:new Date().toISOString()};
-      saveUsers(users);setSession({email,nome});updateNavUI();closeRegister();showToast(`Benvenuto in Nexora, ${nome}! ⚡`);
-    }
+    else{users[email.toLowerCase()]={email,nome,cognome,passHash:hashSimple(pass),registratoIl:new Date().toISOString()};saveUsers(users);setSession({email,nome});updateNavUI();closeRegister();showToast(`Benvenuto in Nexora, ${nome}! ⚡`);}
     btn.disabled=false;bt.style.display='inline';sp.style.display='none';
   },1000);
 }
-
-// HELPERS
 function showMsg(el,text,type){el.textContent=text;el.className='status-msg '+type;}
 function showToast(msg){
   const t=document.createElement('div');t.textContent=msg;
@@ -663,13 +563,8 @@ function checkStrength(val){
   fill.style.width=(s/4*100)+'%';fill.style.background=['','#ef4444','#f59e0b','#10b981','#059669'][s]||'#e5e7eb';
 }
 function updateFileName(input){document.getElementById('fileName').textContent=input.files[0]?'✓ '+input.files[0].name:'';}
-
-// ═══════════════════════════════════════
-//  MODAL CONTROLS — visibilty/opacity pattern
-// ═══════════════════════════════════════
 function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
-
 function openLogin(){clearMsgs();openModal('loginModal');}
 function closeLogin(){closeModal('loginModal');}
 function openRegister(){clearMsgs();openModal('registerModal');}
@@ -680,24 +575,17 @@ function openPdf(){openModal('pdfModal');}
 function closePdf(){closeModal('pdfModal');}
 function openTeam(){document.getElementById('teamPopup').classList.add('open');document.body.style.overflow='hidden';}
 function closeTeam(){document.getElementById('teamPopup').classList.remove('open');document.body.style.overflow='';}
-
 function clearMsgs(){['loginMsg','regMsg'].forEach(id=>{const el=document.getElementById(id);if(el){el.className='status-msg';el.style.display='none';}});}
 function switchToRegister(){closeLogin();setTimeout(openRegister,200);}
 function switchToLogin(){closeRegister();setTimeout(openLogin,200);}
 function showForgot(){showMsg(document.getElementById('loginMsg'),'Contattaci su WhatsApp o via email per reimpostare la password.','info');}
-
-// Chiudi cliccando backdrop
 document.querySelectorAll('.modal').forEach(m=>{
   m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow='';}});
 });
 document.getElementById('teamPopup').addEventListener('click',e=>{
   if(e.target===document.getElementById('teamPopup'))closeTeam();
 });
-
-// HEADER SCROLL
 window.addEventListener('scroll',()=>{document.querySelector('header').classList.toggle('scrolled',window.scrollY>50);});
-
-// COUNTERS
 document.querySelectorAll('.counter').forEach(counter=>{
   const target=+counter.dataset.target;let cur=0;const step=target/80;
   const tick=()=>{if(cur<target){cur=Math.min(cur+step,target);counter.textContent=Math.ceil(cur);requestAnimationFrame(tick);}else{counter.textContent=target;}};
@@ -705,11 +593,9 @@ document.querySelectorAll('.counter').forEach(counter=>{
 });
 let cc=0;const cel=document.getElementById('clientCounter');
 const tck=()=>{if(cc<2625){cc=Math.min(cc+2625/80,2625);cel.textContent=Math.ceil(cc).toLocaleString('it-IT');requestAnimationFrame(tck);}else{cel.textContent=(2625).toLocaleString('it-IT');}};tck();
-
 let visitors=118+Math.floor(Math.random()*30);
 function updateVisitors(){visitors+=Math.floor(Math.random()*5)-2;if(visitors<80)visitors=80;document.getElementById('visitorCounter').textContent=visitors;document.getElementById('visitorCounter2').textContent=visitors;}
 setInterval(updateVisitors,4000);
-
 updateNavUI();
 </script>
 </body>
